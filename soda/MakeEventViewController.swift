@@ -8,28 +8,29 @@
 
 import UIKit
 
-class MakeEventViewController: UIViewController {
-
+class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate {
+    @IBOutlet weak var Header: UIView!
+    let scrollView = UIScrollView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Delegate を設定
+        
+        scrollView.delegate = self
+    }
+    
+    @IBAction func CheckBoxTaped(_ sender: CheckBoxUIButton) {
+        print(sender.isChecked)
+    }
+   
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        Header.frame = CGRect(x:0, y:0+scrollView.contentOffset.y, width:375, height:70)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

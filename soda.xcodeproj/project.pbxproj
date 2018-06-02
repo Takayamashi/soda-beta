@@ -15,9 +15,12 @@
 		6A0FE7A320BC3B7E00F57405 /* logo_title_blue_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FE7A220BC3B7E00F57405 /* logo_title_blue_white.png */; };
 		6A440F3920BE319B002EED8C /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A440F3820BE319B002EED8C /* images.xcassets */; };
 		6A440F3B20BE5F74002EED8C /* MakeEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A440F3A20BE5F74002EED8C /* MakeEventViewController.swift */; };
+		6A440F3F20C03375002EED8C /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A440F3E20C03375002EED8C /* DatePickerTextField.swift */; };
+		6A440F4120C03B3A002EED8C /* TimePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A440F4020C03B3A002EED8C /* TimePickerTextField.swift */; };
 		6A8B4BA020BD2D6600760FAA /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B4B9F20BD2D6600760FAA /* UIView+Border.swift */; };
 		6A8B4BA220BD2E7E00760FAA /* logo_title_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A8B4BA120BD2E7E00760FAA /* logo_title_white.png */; };
 		6A8B4BAA20BD92E000760FAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B4BA920BD92E000760FAA /* HomeViewController.swift */; };
+		6A8F160820C119AC0098CBFD /* CheckBoxUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F160720C119AC0098CBFD /* CheckBoxUIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +34,12 @@
 		6A0FE7A220BC3B7E00F57405 /* logo_title_blue_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_title_blue_white.png; sourceTree = "<group>"; };
 		6A440F3820BE319B002EED8C /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		6A440F3A20BE5F74002EED8C /* MakeEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeEventViewController.swift; sourceTree = "<group>"; };
+		6A440F3E20C03375002EED8C /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
+		6A440F4020C03B3A002EED8C /* TimePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerTextField.swift; sourceTree = "<group>"; };
 		6A8B4B9F20BD2D6600760FAA /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		6A8B4BA120BD2E7E00760FAA /* logo_title_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_title_white.png; sourceTree = "<group>"; };
 		6A8B4BA920BD92E000760FAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6A8F160720C119AC0098CBFD /* CheckBoxUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxUIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				6A8B4B9E20BD2B1200760FAA /* Extension */,
+				6A8F160620C0FD690098CBFD /* Class */,
 				6A0FE79020BBF62700F57405 /* AppDelegate.swift */,
 				6A0FE79220BBF62700F57405 /* ViewController.swift */,
 				6A8B4BA920BD92E000760FAA /* HomeViewController.swift */,
@@ -88,6 +95,16 @@
 				6A8B4B9F20BD2D6600760FAA /* UIView+Border.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		6A8F160620C0FD690098CBFD /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				6A440F3E20C03375002EED8C /* DatePickerTextField.swift */,
+				6A440F4020C03B3A002EED8C /* TimePickerTextField.swift */,
+				6A8F160720C119AC0098CBFD /* CheckBoxUIButton.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,10 +182,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A440F3B20BE5F74002EED8C /* MakeEventViewController.swift in Sources */,
+				6A440F4120C03B3A002EED8C /* TimePickerTextField.swift in Sources */,
+				6A8F160820C119AC0098CBFD /* CheckBoxUIButton.swift in Sources */,
 				6A0FE79320BBF62700F57405 /* ViewController.swift in Sources */,
 				6A0FE79120BBF62700F57405 /* AppDelegate.swift in Sources */,
 				6A8B4BA020BD2D6600760FAA /* UIView+Border.swift in Sources */,
 				6A8B4BAA20BD92E000760FAA /* HomeViewController.swift in Sources */,
+				6A440F3F20C03375002EED8C /* DatePickerTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
