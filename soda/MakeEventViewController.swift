@@ -8,9 +8,8 @@
 
 import UIKit
 
-class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate {
+class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate, UITextViewDelegate {
     
-    @IBOutlet weak var Header: UIView!
     @IBOutlet var scrollView: UIScrollView!
     
     @IBOutlet weak var eventname: UITextField!
@@ -18,10 +17,13 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     @IBOutlet weak var eventfee: UITextField!
     @IBOutlet weak var eventplace: UITextField!
     @IBOutlet weak var eventterms: UITextField!
-    @IBOutlet weak var eventcontent: UITextField!
     @IBOutlet weak var eventcontact: UITextField!
+    @IBOutlet weak var eventcontent: UITextView!
+    
+    var myLeftButton: UIBarButtonItem!
     
     
+    let backButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickbackButton))
     
     
     var txtActiveField = UITextField()
@@ -38,15 +40,13 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         eventterms.delegate = self
         eventcontent.delegate = self
         eventcontact.delegate = self
+        
+        setnavigationBar()
     }
     
     
     @IBAction func CheckBoxTaped(_ sender: CheckBoxUIButton) {
         print(sender.isChecked)
-    }
-   
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        Header.frame = CGRect(x:0, y:0+scrollView.contentOffset.y, width:375, height:70)
     }
     
     //UITextFieldが編集された直後に呼ばれる.
@@ -98,7 +98,7 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     // Keyboardが現れた時Viewをずらす。
     @objc func keyboardWillShow(notification: Notification?) {
         //上のTextFieldをタップする時そのまま、下のTextFieldをタップする時Viewをずらす。
-        if txtActiveField.isFirstResponder {
+        if txtActiveField.isFirstResponder || eventcontent.isFirstResponder {
             let rect = (notification?.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
             let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double
             UIView.animate(withDuration: duration!, animations: { () in
@@ -115,6 +115,41 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
             self.view.transform = CGAffineTransform.identity
         })
     }
+    
+    
+    func setnavigationBar(){
+        //NavigationBarが半透明かどうか
+        navigationController?.navigationBar.isTranslucent = false
+        //NavigationBarの色を変更
+        navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 128/255, blue: 255/255, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        
+        //次の画面に戻るボタン設置
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        
+        
+        // 左ボタンを作成する.
+        myLeftButton = UIBarButtonItem(image:UIImage(named: "back"), style: .plain, target: nil, action: #selector(clickbackButton))
+        
+        //ナビゲーションバーの右側にボタン付与
+        self.navigationItem.leftBarButtonItem = myLeftButton
+        
+        //ナビゲーションアイテムのタイトルに画像を設定する。
+        self.navigationItem.title = "イベントの作成"
+        
+    }
+    
+    @objc func clickbackButton(){
+        
+    }
+    
+    @IBAction func Next(_ sender: Any) {
+        self.performSegue(withIdentifier: "confirmevent", sender: nil)
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
