@@ -13,10 +13,22 @@ import SlideMenuControllerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func createMenuView(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "Main")
+        let leftVC = storyboard.instantiateViewController(withIdentifier: "Left")
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        let slideMenuController = SlideMenuController(mainViewController: navigationController, leftMenuViewController: leftVC)
+        self.window?.rootViewController = slideMenuController
+        self.window?.makeKeyAndVisible()
+        SlideMenuOptions.contentViewScale = 1.0
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.createMenuView()
         return true
     }
 
