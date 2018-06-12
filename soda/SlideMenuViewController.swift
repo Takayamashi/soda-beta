@@ -20,6 +20,9 @@ class SlideMenuViewController: SlideMenuController {
         //ライブラリ特有のプロパティにセット
         mainViewController = navigationController
         leftViewController = leftVC
+        
+        
+        SlideMenuOptions.contentViewScale = 1.0
         super.awakeFromNib()
     }
     
