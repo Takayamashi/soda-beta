@@ -9,12 +9,14 @@
 import UIKit
 import SlideMenuControllerSwift
 
-class HomeViewController: UIViewController,UITabBarDelegate {
-    @IBOutlet weak var Menu: UIButton!
+class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     
     // ボタン作成
-    let searchButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "search")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickRefreshButton))
-    let noteButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "note")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickRefreshButton))
+    let searchButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickRefreshButton))
+    let noteButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "notification20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickRefreshButton))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,13 @@ class HomeViewController: UIViewController,UITabBarDelegate {
         UITabBar.appearance().tintColor = UIColor(red: 63.0/255.0, green: 128.0/255.0, blue: 255.0/255.0, alpha: 1)
         
         self.setnavigationBar()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //次の画面に戻るボタン設置
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
 
     }
     
@@ -32,7 +41,7 @@ class HomeViewController: UIViewController,UITabBarDelegate {
         navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 128/255, blue: 255/255, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
         //バーの左側にボタンを配置(ライブラリ特有)
-        addLeftBarButtonWithImage(UIImage(named: "list")!)
+        addLeftBarButtonWithImage(UIImage(named: "list20")!)
         
         //ナビゲーションバーの右側にボタン付与
         self.navigationItem.setRightBarButtonItems([noteButton, searchButton], animated: true)
@@ -53,6 +62,27 @@ class HomeViewController: UIViewController,UITabBarDelegate {
     
     @objc func clickRefreshButton(){
         //refreshButtonを押した際の処理を記述
+    }
+    
+    
+    //tableviewのデリゲートメソッド
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "EventDetail", sender: nil)
     }
     
     

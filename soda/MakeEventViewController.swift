@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate, UITextViewDelegate {
+class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate, UITextViewDelegate, UIViewControllerTransitioningDelegate {
     
     @IBOutlet var scrollView: UIScrollView!
     
@@ -21,15 +21,17 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     @IBOutlet weak var eventcontent: UITextView!
     
     var myLeftButton: UIBarButtonItem!
-    
-    
-    let backButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickbackButton))
+    var mainViewController: UIViewController!
     
     
     var txtActiveField = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let mainController = storyboard?.instantiateViewController(withIdentifier: "Main") as! HomeViewController
+        self.mainViewController = UINavigationController(rootViewController: mainController)
+        
         // Delegate を設定
         scrollView.delegate = self
         // textfiled用Delegate
@@ -40,6 +42,12 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         eventterms.delegate = self
         eventcontent.delegate = self
         eventcontact.delegate = self
+        
+        // 左ボタンを作成する.
+        myLeftButton = UIBarButtonItem(image:UIImage(named: "back"), style: .plain, target: self, action: #selector(clickbackButton(sender:)))
+
+        //ナビゲーションバーの右側にボタン付与
+        self.navigationItem.leftBarButtonItem = myLeftButton
         
         setnavigationBar()
     }
@@ -125,32 +133,32 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
+        
+        
         //次の画面に戻るボタン設置
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
         
-        
-        // 左ボタンを作成する.
-        myLeftButton = UIBarButtonItem(image:UIImage(named: "back"), style: .plain, target: nil, action: #selector(clickbackButton))
-        
-        //ナビゲーションバーの右側にボタン付与
-        self.navigationItem.leftBarButtonItem = myLeftButton
         
         //ナビゲーションアイテムのタイトルに画像を設定する。
         self.navigationItem.title = "イベントの作成"
         
     }
     
-    @objc func clickbackButton(){
-        
+    @objc func clickbackButton(sender: UIButton){
+        //もともとのアニメーションを削除
+        self.view.layer.removeAllAnimations()
+        let transition = CATransition()
+        transition.duration = 10
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
     }
     
     @IBAction func Next(_ sender: Any) {
         self.performSegue(withIdentifier: "confirmevent", sender: nil)
     }
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

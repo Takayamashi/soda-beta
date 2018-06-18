@@ -10,10 +10,10 @@ import UIKit
 
 class LeftViewController: UIViewController {
     
+    var madeeventViewController: UIViewController!
     var makeeventViewController: UIViewController!
     var profileconfigViewController: UIViewController!
     var mainViewController: UIViewController!
-    
     
     
     override func viewDidLoad() {
@@ -24,6 +24,10 @@ class LeftViewController: UIViewController {
         
         let makeeventController = storyboard?.instantiateViewController(withIdentifier: "MakeEvent") as! MakeEventViewController
         self.makeeventViewController = UINavigationController(rootViewController: makeeventController)
+        
+        let madeeventController = storyboard?.instantiateViewController(withIdentifier: "MadeEvent") as! MadeEventViewController
+        self.madeeventViewController = UINavigationController(rootViewController: madeeventController)
+        
 
     }
 
@@ -46,6 +50,13 @@ class LeftViewController: UIViewController {
         self.slideMenuController()?.changeMainViewController(self.makeeventViewController, close: true)
     }
     
+    @IBAction func MadeEventButton(_ sender: Any) {
+        self.slideMenuController()?.changeMainViewController(self.madeeventViewController, close: true)
+    }
+    
+    @IBAction func madeevent(_ sender: Any) {
+        self.slideMenuController()?.changeMainViewController(self.madeeventViewController, close: true)
+    }
     
     
 
