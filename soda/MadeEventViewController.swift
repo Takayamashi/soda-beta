@@ -60,7 +60,9 @@ class MadeEventViewController: UIViewController, UITableViewDataSource, UITableV
         
         let defaultAction: UIAlertAction = UIAlertAction(title: "イベントの内容を変更", style: .default, handler:{
             (action: UIAlertAction!) -> Void in
-            self.performSegue(withIdentifier: "settingevent", sender: nil)
+            let storyboard: UIStoryboard = UIStoryboard(name: "MadeEvent", bundle: nil)
+            let nextView = storyboard.instantiateViewController(withIdentifier: "ConfigEvent") as! ConfigEventViewController
+            self.show(nextView, sender: nil)
             
         })
         let defaultAction1: UIAlertAction = UIAlertAction(title: "イベントを取り消す", style: .default, handler:{
@@ -76,7 +78,7 @@ class MadeEventViewController: UIViewController, UITableViewDataSource, UITableV
         defaultAction1.setValue(UIImage(named: "cancel.png"), forKey: "image")
         defaultAction1.setValue(UIColor(red: 75/255, green: 75/255, blue: 75/255, alpha: 1), forKey: "imageTintColor")
         
-        cancelAction.setValue(UIImage(named: "cross.png"), forKey: "image")
+        cancelAction.setValue(UIImage(named: "cross_s.png"), forKey: "image")
         cancelAction.setValue(UIColor(red: 75/255, green: 75/255, blue: 75/255, alpha: 1), forKey: "imageTintColor")
         
         alert.addAction(defaultAction)

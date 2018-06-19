@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func createMenuView(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
         let mainVC = storyboard.instantiateViewController(withIdentifier: "Main")
         let leftVC = storyboard.instantiateViewController(withIdentifier: "Left")
         let navigationController = UINavigationController(rootViewController: mainVC)

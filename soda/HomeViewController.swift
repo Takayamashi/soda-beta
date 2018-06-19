@@ -80,9 +80,22 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // Storyboardで遷移時に呼ばれる
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 遷移先のコントローラを取得
+        let controller = segue.destination as! EventDetailViewController
         
-        performSegue(withIdentifier: "EventDetail", sender: nil)
+        // 遷移先で処理を終えた後の処理をここで書く
+        controller.resultHandler = "test" // テスト
+        }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
+        let nextView = storyboard.instantiateViewController(withIdentifier: "EventDetail") as! EventDetailViewController
+        nextView.resultHandler = "text"
+        self.show(nextView, sender: nil)
+        
+        //performSegue(withIdentifier: "EventDetail", sender: nil)
     }
     
     
