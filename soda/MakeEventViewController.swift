@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension UIScrollView {
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.next?.touchesBegan(touches, with: event)
+    }
+}
+
 class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate, UITextViewDelegate, UIViewControllerTransitioningDelegate {
     
     @IBOutlet var scrollView: UIScrollView!
@@ -19,6 +25,9 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     @IBOutlet weak var eventterms: UITextField!
     @IBOutlet weak var eventcontact: UITextField!
     @IBOutlet weak var eventcontent: UITextView!
+    
+    @IBOutlet weak var univaddTextField: UnivPickerTextField!
+    
     
     var myLeftButton: UIBarButtonItem!
     var mainViewController: UIViewController!
@@ -42,6 +51,7 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         eventterms.delegate = self
         eventcontent.delegate = self
         eventcontact.delegate = self
+        
         
         // 左ボタンを作成する.
         myLeftButton = UIBarButtonItem(image:UIImage(named: "back"), style: .plain, target: self, action: #selector(clickbackButton(sender:)))
@@ -73,6 +83,7 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         eventterms.resignFirstResponder()
         eventcontent.resignFirstResponder()
         eventcontact.resignFirstResponder()
+        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -157,10 +168,30 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     }
     
     @IBAction func Next(_ sender: Any) {
-        self.performSegue(withIdentifier: "confirmevent", sender: nil)
+        let ConfirmEventstoryboard: UIStoryboard = UIStoryboard(name: "MakeEvent", bundle: nil)
+        let ConfirmEventView = ConfirmEventstoryboard.instantiateViewController(withIdentifier: "ConfirmEvent") as! NotificationViewController
+        self.show(ConfirmEventView, sender: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func adduniv(_ sender: Any) {
+        
+        let add:String = univaddTextField.text!
+        
+        if university.text != ""{
+            if university.text!.contains(add){
+            }else{
+                let universities: String = university.text! + ", " + add
+                university.text = universities
+            }
+        }
+        else{
+            let universities: String = university.text! + add
+            university.text = universities
+        }
+        
     }
     
 

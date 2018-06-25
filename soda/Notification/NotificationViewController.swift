@@ -9,8 +9,6 @@
 import UIKit
 
 class NotificationViewController: UIViewController {
-    
-    let backButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickbackButton))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +23,11 @@ class NotificationViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 128/255, blue: 255/255, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
         
-        //ナビゲーションバーの右側にボタン付与
-        self.navigationItem.setLeftBarButtonItems([backButton], animated: true)
-        
         //ナビゲーションアイテムのタイトルに画像を設定する。
-        self.navigationItem.title = "通知"
+        self.navigationItem.titleView = UIImageView(image:UIImage(named:"logo_white_small"))
         
     }
     
-    @objc func clickbackButton(){
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

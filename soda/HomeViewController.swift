@@ -9,19 +9,21 @@
 import UIKit
 import SlideMenuControllerSwift
 
-class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     
     // ボタン作成
-    let searchButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickRefreshButton))
-    let noteButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "notification20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickRefreshButton))
+    let searchButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickSearchButton))
+    var noteButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        noteButton = UIBarButtonItem(image: UIImage(named: "notification20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
         
         UITabBar.appearance().tintColor = UIColor(red: 63.0/255.0, green: 128.0/255.0, blue: 255.0/255.0, alpha: 1)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         self.setnavigationBar()
         
@@ -44,7 +46,7 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         addLeftBarButtonWithImage(UIImage(named: "list20")!)
         
         //ナビゲーションバーの右側にボタン付与
-        self.navigationItem.setRightBarButtonItems([noteButton, searchButton], animated: true)
+        self.navigationItem.setRightBarButtonItems([noteButton!, searchButton], animated: true)
         
         //ナビゲーションアイテムのタイトルに画像を設定する。
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"logo_white_small"))
@@ -56,14 +58,6 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         super.viewWillTransition(to: size, with: coordinator)
     }
     
-    @objc func clickSearchButton(){
-        //searchButtonを押した際の処理を記述
-    }
-    
-    @objc func clickRefreshButton(){
-        //refreshButtonを押した際の処理を記述
-    }
-    
     
     //tableviewのデリゲートメソッド
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,29 +65,22 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         return cell
     }
     
-    // Storyboardで遷移時に呼ばれる
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // 遷移先のコントローラを取得
-        let controller = segue.destination as! EventDetailViewController
-        
-        // 遷移先で処理を終えた後の処理をここで書く
-        controller.resultHandler = "test" // テスト
-        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
-        let nextView = storyboard.instantiateViewController(withIdentifier: "EventDetail") as! EventDetailViewController
-        nextView.resultHandler = "text"
-        self.show(nextView, sender: nil)
+        let EventDetailstoryboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
+        let EventDetailView = EventDetailstoryboard.instantiateViewController(withIdentifier: "EventDetail") as! EventDetailViewController
+        EventDetailView.resultHandler = "text"
+        self.show(EventDetailView, sender: nil)
         
         //performSegue(withIdentifier: "EventDetail", sender: nil)
     }
@@ -126,7 +113,16 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     }
 */
     
+    @objc func clickSearchButton(){
+        //searchButtonを押した際の処理を記述
+    }
     
+    @objc func clickNoteButton(){
+        //noteButtonを押した際の処理を記述
+        let Notificationstoryboard: UIStoryboard = UIStoryboard(name: "Notification", bundle: nil)
+        let NotificationView = Notificationstoryboard.instantiateViewController(withIdentifier: "Notification") as! NotificationViewController
+        self.show(NotificationView, sender: nil)
+    }
     
 
     override func didReceiveMemoryWarning() {

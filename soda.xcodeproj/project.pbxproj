@@ -15,6 +15,8 @@
 		6A0FE79620BBF62700F57405 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FE79420BBF62700F57405 /* Home.storyboard */; };
 		6A0FE79820BBF62900F57405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FE79720BBF62900F57405 /* Assets.xcassets */; };
 		6A0FE79B20BBF62900F57405 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FE79920BBF62900F57405 /* LaunchScreen.storyboard */; };
+		6A2DAF5220D8EA18001554E8 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2DAF5120D8EA18001554E8 /* Notification.storyboard */; };
+		6A2DAF5720D90FCA001554E8 /* MakeEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2DAF5620D90FCA001554E8 /* MakeEvent.storyboard */; };
 		6A440F3920BE319B002EED8C /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A440F3820BE319B002EED8C /* images.xcassets */; };
 		6A440F3B20BE5F74002EED8C /* MakeEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A440F3A20BE5F74002EED8C /* MakeEventViewController.swift */; };
 		6A440F3F20C03375002EED8C /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A440F3E20C03375002EED8C /* DatePickerTextField.swift */; };
@@ -29,6 +31,7 @@
 		6A8B4BA020BD2D6600760FAA /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B4B9F20BD2D6600760FAA /* UIView+Border.swift */; };
 		6A8B4BAA20BD92E000760FAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B4BA920BD92E000760FAA /* HomeViewController.swift */; };
 		6A8F160820C119AC0098CBFD /* CheckBoxUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8F160720C119AC0098CBFD /* CheckBoxUIButton.swift */; };
+		6A9F01FB20DA94CE00AFC6F5 /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F01FA20DA94CE00AFC6F5 /* AgreementViewController.swift */; };
 		6ACB951220D8979E00BF619D /* MadeEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACB951120D8979E00BF619D /* MadeEvent.storyboard */; };
 		6ACB951420D8A13200BF619D /* ConfigEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB951320D8A13200BF619D /* ConfigEventViewController.swift */; };
 		6AFEF61720D76459001F4C6B /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFEF61620D76459001F4C6B /* Animator.swift */; };
@@ -49,6 +52,8 @@
 		6A0FE79720BBF62900F57405 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A0FE79A20BBF62900F57405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A0FE79C20BBF62900F57405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A2DAF5120D8EA18001554E8 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		6A2DAF5620D90FCA001554E8 /* MakeEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MakeEvent.storyboard; sourceTree = "<group>"; };
 		6A440F3820BE319B002EED8C /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		6A440F3A20BE5F74002EED8C /* MakeEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeEventViewController.swift; sourceTree = "<group>"; };
 		6A440F3E20C03375002EED8C /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		6A8B4B9F20BD2D6600760FAA /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		6A8B4BA920BD92E000760FAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6A8F160720C119AC0098CBFD /* CheckBoxUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxUIButton.swift; sourceTree = "<group>"; };
+		6A9F01FA20DA94CE00AFC6F5 /* AgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		6ACB951120D8979E00BF619D /* MadeEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MadeEvent.storyboard; sourceTree = "<group>"; };
 		6ACB951320D8A13200BF619D /* ConfigEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigEventViewController.swift; sourceTree = "<group>"; };
 		6AFEF61620D76459001F4C6B /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
@@ -116,24 +122,59 @@
 				6A8B4B9E20BD2B1200760FAA /* Extension */,
 				6A8F160620C0FD690098CBFD /* Class */,
 				6A0FE79020BBF62700F57405 /* AppDelegate.swift */,
-				6ACB951320D8A13200BF619D /* ConfigEventViewController.swift */,
 				6A0FE79220BBF62700F57405 /* ViewController.swift */,
 				6A440F3A20BE5F74002EED8C /* MakeEventViewController.swift */,
 				6A8B4BA920BD92E000760FAA /* HomeViewController.swift */,
 				6A0A09CE20C3C6B700042E30 /* LeftViewController.swift */,
 				6A6B832020C8DC90009B60F3 /* ProfileConfigViewController.swift */,
-				6A0B002120CCB85E00B24E01 /* ConfirmEventViewController.swift */,
-				6A0B002320CD44BF00B24E01 /* NotificationViewController.swift */,
 				6A4D37A920CFD1C9000A6652 /* MadeEventViewController.swift */,
-				6A53134920D4EC46008491EA /* EventDetailViewController.swift */,
 				6A0FE79420BBF62700F57405 /* Home.storyboard */,
-				6AFEF61C20D7E9F3001F4C6B /* EventDetail.storyboard */,
-				6ACB951120D8979E00BF619D /* MadeEvent.storyboard */,
+				6A9F01FA20DA94CE00AFC6F5 /* AgreementViewController.swift */,
+				6A2DAF5320D8EA46001554E8 /* Notification */,
+				6A2DAF5020D8E80E001554E8 /* MadeEvent */,
+				6A2DAF4F20D8E730001554E8 /* EventDetil */,
+				6A2DAF5520D8FC32001554E8 /* MakeEvent */,
 				6A0FE79720BBF62900F57405 /* Assets.xcassets */,
 				6A0FE79920BBF62900F57405 /* LaunchScreen.storyboard */,
 				6A0FE79C20BBF62900F57405 /* Info.plist */,
 			);
 			path = soda;
+			sourceTree = "<group>";
+		};
+		6A2DAF4F20D8E730001554E8 /* EventDetil */ = {
+			isa = PBXGroup;
+			children = (
+				6A53134920D4EC46008491EA /* EventDetailViewController.swift */,
+				6AFEF61C20D7E9F3001F4C6B /* EventDetail.storyboard */,
+			);
+			path = EventDetil;
+			sourceTree = "<group>";
+		};
+		6A2DAF5020D8E80E001554E8 /* MadeEvent */ = {
+			isa = PBXGroup;
+			children = (
+				6ACB951320D8A13200BF619D /* ConfigEventViewController.swift */,
+				6A0B002120CCB85E00B24E01 /* ConfirmEventViewController.swift */,
+				6ACB951120D8979E00BF619D /* MadeEvent.storyboard */,
+			);
+			path = MadeEvent;
+			sourceTree = "<group>";
+		};
+		6A2DAF5320D8EA46001554E8 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				6A0B002320CD44BF00B24E01 /* NotificationViewController.swift */,
+				6A2DAF5120D8EA18001554E8 /* Notification.storyboard */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		6A2DAF5520D8FC32001554E8 /* MakeEvent */ = {
+			isa = PBXGroup;
+			children = (
+				6A2DAF5620D90FCA001554E8 /* MakeEvent.storyboard */,
+			);
+			path = MakeEvent;
 			sourceTree = "<group>";
 		};
 		6A8B4B9E20BD2B1200760FAA /* Extension */ = {
@@ -230,9 +271,11 @@
 				6A0FE79B20BBF62900F57405 /* LaunchScreen.storyboard in Resources */,
 				6A440F3920BE319B002EED8C /* images.xcassets in Resources */,
 				6A0FE79820BBF62900F57405 /* Assets.xcassets in Resources */,
+				6A2DAF5720D90FCA001554E8 /* MakeEvent.storyboard in Resources */,
 				6A0FE79620BBF62700F57405 /* Home.storyboard in Resources */,
 				6ACB951220D8979E00BF619D /* MadeEvent.storyboard in Resources */,
 				6AFEF61D20D7E9F3001F4C6B /* EventDetail.storyboard in Resources */,
+				6A2DAF5220D8EA18001554E8 /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +337,7 @@
 				6A0A09CF20C3C6B700042E30 /* LeftViewController.swift in Sources */,
 				6A0B002220CCB85E00B24E01 /* ConfirmEventViewController.swift in Sources */,
 				6A78BBA320CA6FD9000B3F12 /* UnivPickerTextField.swift in Sources */,
+				6A9F01FB20DA94CE00AFC6F5 /* AgreementViewController.swift in Sources */,
 				6A4D37AA20CFD1C9000A6652 /* MadeEventViewController.swift in Sources */,
 				6ACB951420D8A13200BF619D /* ConfigEventViewController.swift in Sources */,
 				6A5A75ED20CC0EAE00F20459 /* ProfileTextView.swift in Sources */,
@@ -449,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2N3P7R2Y2;
 				INFOPLIST_FILE = soda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,6 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2N3P7R2Y2;
 				INFOPLIST_FILE = soda/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
