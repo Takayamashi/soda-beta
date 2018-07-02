@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
-class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+
+class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SlideMenuControllerDelegate {
     
     var madeeventViewController: UIViewController!
     var makeeventViewController: UIViewController!
@@ -21,8 +24,10 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         let profileconfigController = storyboard?.instantiateViewController(withIdentifier: "ProfileConfig") as! ProfileConfigViewController
         self.profileconfigViewController = UINavigationController(rootViewController: profileconfigController)
@@ -35,6 +40,7 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let agreementController = storyboard?.instantiateViewController(withIdentifier: "Agreement") as! AgreementViewController
         self.agreementViewController = UINavigationController(rootViewController: agreementController)
+        
         
         
         let image0 = UIImage(named: "pencil25")
@@ -52,13 +58,37 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+    }
+    
     @IBAction func ProfileButton(_ sender: Any) {
+        //self.present(self.profileconfigViewController, animated: true, completion: nil)
         self.slideMenuController()?.changeMainViewController(self.profileconfigViewController, close: true)
+        /*
+        let Mainstoryboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let profileconfigController = Mainstoryboard.instantiateViewController(withIdentifier: "ProfileConfig") as! ProfileConfigViewController
+        closeLeft()
+        self.show(profileconfigController, sender: nil)
+         */
+        
+        /*
+        let profileconfigController = storyboard?.instantiateViewController(withIdentifier: "ProfileConfig") as! ProfileConfigViewController
+        let nextVC = ProfileConfigViewController()
+        let naviVC = UINavigationController(rootViewController: nextVC)
+        naviVC.view = profileconfigController.MainView
+        self.present(naviVC, animated: true, completion: nil)
+         */
     }
     @IBAction func Profilename(_ sender: Any) {
         self.slideMenuController()?.changeMainViewController(self.profileconfigViewController, close: true)
@@ -91,6 +121,7 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let selected = indexPath.row
         if(selected == 0){
             self.slideMenuController()?.changeMainViewController(self.makeeventViewController, close: true)
+            //let SlideMenuController = SlideMenuController(mainViewController:mainViewController, rightMenuViewController:self.rightViewController)
         }else if(selected == 1){
             self.slideMenuController()?.changeMainViewController(self.madeeventViewController, close: true)
         }else if(selected == 2){

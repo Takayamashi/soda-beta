@@ -11,16 +11,23 @@ import SlideMenuControllerSwift
 
 class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
     
+    @IBOutlet var wholeView: UIView!
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     
     // ボタン作成
-    let searchButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickSearchButton))
+    var searchButton: UIBarButtonItem?
     var noteButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickSearchButton))
+        
         noteButton = UIBarButtonItem(image: UIImage(named: "notification20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
+        
         
         UITabBar.appearance().tintColor = UIColor(red: 63.0/255.0, green: 128.0/255.0, blue: 255.0/255.0, alpha: 1)
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -36,6 +43,12 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //self.slideMenuController()?.openLeftWithVelocity(1.0)
+        //self.slideMenuController()?.closeLeftWithVelocity(1.0)
+        self.slideMenuController()?.addLeftGestures()
+    }
+    
     func setnavigationBar(){
         //NavigationBarが半透明かどうか
         navigationController?.navigationBar.isTranslucent = false
@@ -46,7 +59,7 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         addLeftBarButtonWithImage(UIImage(named: "list20")!)
         
         //ナビゲーションバーの右側にボタン付与
-        self.navigationItem.setRightBarButtonItems([noteButton!, searchButton], animated: true)
+        self.navigationItem.setRightBarButtonItems([noteButton!, searchButton!], animated: true)
         
         //ナビゲーションアイテムのタイトルに画像を設定する。
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"logo_white_small"))
@@ -115,6 +128,8 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     
     @objc func clickSearchButton(){
         //searchButtonを押した際の処理を記述
+        //let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "login")
+        //self.present(loginViewController!, animated: true, completion: nil)
     }
     
     @objc func clickNoteButton(){

@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
-class MadeEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MadeEventViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SlideMenuControllerDelegate {
     var selectNumber:Int = 0 //タップしたalertControllerの位置を記録する変数
     
     @IBOutlet weak var tableView: UITableView!
+    var mainContainerView = UIView()
+    var mainViewController: UIViewController!
     
     
     var myLeftButton: UIBarButtonItem!
     
-    var mainViewController: UIViewController!
-    
     override func viewDidLoad() {
+        super.awakeFromNib()
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
@@ -109,14 +111,11 @@ class MadeEventViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @objc func clickbackButton(sender: UIButton){
-        //もともとのアニメーションを削除
-        self.view.layer.removeAllAnimations()
-        let transition = CATransition()
-        transition.duration = 10
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
-        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-        self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        self.slideMenuController()?.openRight()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+            // your code here
+            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {

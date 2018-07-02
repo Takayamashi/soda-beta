@@ -8,11 +8,32 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import FacebookCore
+import FacebookLogin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        let image = UIImage(named: "back")?.withRenderingMode(.alwaysOriginal)
+        UINavigationBar.appearance().backIndicatorImage = image
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = image
+        self.createMenuView()
+        
+        // for Facebook
+        //Facebook初期化
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // Call the 'activate' method to log an app event for use
+        // in analytics and advertising reporting.
+        AppEventsLogger.activate(application)
+    }
     
     func createMenuView(){
         let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -23,16 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = slideMenuController
         self.window?.makeKeyAndVisible()
         SlideMenuOptions.contentViewScale = 1.0
+        SlideMenuOptions.contentViewDrag = true
     }
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let image = UIImage(named: "back")?.withRenderingMode(.alwaysOriginal)
-        UINavigationBar.appearance().backIndicatorImage = image
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = image
-        self.createMenuView()
-        return true
-    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -46,10 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

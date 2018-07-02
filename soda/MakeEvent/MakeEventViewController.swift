@@ -16,6 +16,11 @@ extension UIScrollView {
 
 class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollViewDelegate, UITextViewDelegate, UIViewControllerTransitioningDelegate {
     
+    
+    @IBOutlet weak var BelowView: UIView!
+    @IBOutlet weak var MainView: UIView!
+    
+    
     @IBOutlet var scrollView: UIScrollView!
     
     @IBOutlet weak var eventname: UITextField!
@@ -32,11 +37,19 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     var myLeftButton: UIBarButtonItem!
     var mainViewController: UIViewController!
     
+    // ボタン作成
+    var searchButton: UIBarButtonItem?
+    var noteButton: UIBarButtonItem?
+    
     
     var txtActiveField = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        
+        noteButton = UIBarButtonItem(image: UIImage(named: "notification20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: nil)
         
         let mainController = storyboard?.instantiateViewController(withIdentifier: "Main") as! HomeViewController
         self.mainViewController = UINavigationController(rootViewController: mainController)
@@ -52,16 +65,14 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         eventcontent.delegate = self
         eventcontact.delegate = self
         
-        
         // 左ボタンを作成する.
         myLeftButton = UIBarButtonItem(image:UIImage(named: "back"), style: .plain, target: self, action: #selector(clickbackButton(sender:)))
-
+        
         //ナビゲーションバーの右側にボタン付与
         self.navigationItem.leftBarButtonItem = myLeftButton
         
         setnavigationBar()
     }
-    
     
     @IBAction func CheckBoxTaped(_ sender: CheckBoxUIButton) {
         print(sender.isChecked)
@@ -93,12 +104,33 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.configureObserver()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.removeObserver()
+        print("willdisappear")
+        
+        /*
+        self.view.layer.removeAllAnimations()
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+         */
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        /*
+        self.view.layer.removeAllAnimations()
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+        */
     }
     
     // Notificationを設定
@@ -156,20 +188,58 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         
     }
     
+    func setnavigationBar2(){
+        
+        //NavigationBarが半透明かどうか
+        navigationController?.navigationBar.isTranslucent = false
+        //NavigationBarの色を変更
+        navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 128/255, blue: 255/255, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
+        //バーの左側にボタンを配置(ライブラリ特有)
+        addLeftBarButtonWithImage(UIImage(named: "list20")!)
+        
+        //ナビゲーションバーの右側にボタン付与
+        self.navigationItem.setRightBarButtonItems([noteButton!, searchButton!], animated: true)
+        
+        //ナビゲーションアイテムのタイトルに画像を設定する。
+        self.navigationItem.titleView = UIImageView(image:UIImage(named:"logo_white_small"))
+        
+    }
+    
+    
+    
+    
     @objc func clickbackButton(sender: UIButton){
-        //もともとのアニメーションを削除
+        //setnavigationBar2()
+        
+        
+        /*
+        let mainController = storyboard?.instantiateViewController(withIdentifier: "Main") as! HomeViewController
+        MainView = mainController.wholeView
         self.view.layer.removeAllAnimations()
         let transition = CATransition()
-        transition.duration = 10
+        transition.duration = 0.5
         transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
+        transition.subtype = kCATransitionFromLeft
         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-        self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        */
+ 
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+        self.slideMenuController()?.openLeft()
+        self.slideMenuController()?.closeLeft()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+            // your code here
+            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        }
+        //self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+ 
+        //}
     }
+    
     
     @IBAction func Next(_ sender: Any) {
         let ConfirmEventstoryboard: UIStoryboard = UIStoryboard(name: "MakeEvent", bundle: nil)
-        let ConfirmEventView = ConfirmEventstoryboard.instantiateViewController(withIdentifier: "ConfirmEvent") as! NotificationViewController
+        let ConfirmEventView = ConfirmEventstoryboard.instantiateViewController(withIdentifier: "Confirm") as! ConfirmViewController
         self.show(ConfirmEventView, sender: nil)
     }
     override func didReceiveMemoryWarning() {
@@ -194,6 +264,5 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         
     }
     
-
-
 }
+

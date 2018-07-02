@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Confirm Event View Controller-->
+        <!--Confirm View Controller-->
         <scene sceneID="53Q-l9-Xz1">
             <objects>
-                <viewController storyboardIdentifier="ConfirmEvent" id="W3t-At-91k" customClass="ConfirmEventViewController" customModule="soda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Confirm" id="W3t-At-91k" customClass="ConfirmViewController" customModule="soda" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cAb-6n-2Mp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
