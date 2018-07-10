@@ -18,6 +18,7 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var profileconfigViewController: UIViewController!
     var mainViewController: UIViewController!
     var agreementViewController: UIViewController!
+    var responsivesize: CGSize!
     
     var imageArray = [UIImage]()
     var stringArray = [String]()
@@ -122,6 +123,9 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if(selected == 0){
             self.slideMenuController()?.changeMainViewController(self.makeeventViewController, close: true)
             //let SlideMenuController = SlideMenuController(mainViewController:mainViewController, rightMenuViewController:self.rightViewController)
+            
+            
+            
         }else if(selected == 1){
             self.slideMenuController()?.changeMainViewController(self.madeeventViewController, close: true)
         }else if(selected == 2){

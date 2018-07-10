@@ -733,7 +733,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="album" width="256" height="256"/>
+        <image name="album" width="22" height="22"/>
         <image name="button:CSg-mH-bdX:image" width="26" height="26">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
@@ -2200,7 +2200,7 @@ iQCLAJAAkgCUAJ0AogCtAK8AsQCzALgAuwC9AL8AwQDDAMgA3wDhAOMYoRimGLEYuhjNGNEY3BjlGOoY
 GysgKy0rMCs9K0IrSitNK1IrWitdK28rcit3AAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAK3k
 </mutableData>
         </image>
-        <image name="profile" width="256" height="256"/>
-        <image name="theme" width="64" height="64"/>
+        <image name="profile" width="80" height="80"/>
+        <image name="theme" width="22" height="22"/>
     </resources>
 </document>

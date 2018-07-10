@@ -13,13 +13,23 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     
     @IBOutlet var wholeView: UIView!
     
-    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tabBar: UITabBar!
+    
+    
+    
+    var cachedHeight = [IndexPath : CGFloat]()
     
     
     // ボタン作成
     var searchButton: UIBarButtonItem?
     var noteButton: UIBarButtonItem?
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tabBar.invalidateIntrinsicContentSize()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +44,26 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         
         self.setnavigationBar()
         
+        //tableView.rowHeight = UITableViewAutomaticDimension //追加
+        //tableView.estimatedRowHeight = 270 //追加
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.estimatedRowHeight = 270
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         //次の画面に戻るボタン設置
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
 
     }
+    
+    /*
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension //変更
+    }
+    */
     
     override func viewWillAppear(_ animated: Bool) {
         //self.slideMenuController()?.openLeftWithVelocity(1.0)
@@ -84,6 +106,7 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.layoutIfNeeded()
         
         return cell
     }

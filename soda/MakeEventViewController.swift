@@ -31,6 +31,35 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     @IBOutlet weak var eventcontact: UITextField!
     @IBOutlet weak var eventcontent: UITextView!
     
+    
+    //responsive
+    var resizedView: CGSize?
+    
+    @IBOutlet weak var space_bottom: UIView!
+    @IBOutlet weak var space_bottom_width: NSLayoutConstraint!
+    @IBOutlet weak var space_bottom_height: NSLayoutConstraint!
+    
+    
+    
+    @IBOutlet weak var theme: UIButton!
+    @IBOutlet weak var album: UIButton!
+    @IBOutlet weak var themeview: UIView!
+    @IBOutlet weak var albumview: UIView!
+    @IBOutlet weak var themeimage: UIImageView!
+    @IBOutlet weak var imageheight: NSLayoutConstraint!
+    @IBOutlet weak var imagewidth: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var eventnameheight: NSLayoutConstraint!
+    @IBOutlet weak var eventnamewidth: NSLayoutConstraint!
+    @IBOutlet weak var eventnameView: UIView!
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var univaddTextField: UnivPickerTextField!
     
     
@@ -44,8 +73,106 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     
     var txtActiveField = UITextField()
     
+    func resize(resizeView: CGSize, resizer: CGSize) -> CGSize{
+        resizedView?.width = resizeView.width  * (resizer.width/375.0)
+        resizedView?.height = resizeView.height  * (resizer.height/375.0)
+        resizedView = CGSize(width: resizeView.width  * (resizer.width/375.0), height: resizeView.height  * (resizer.height/375.0))
+        
+        return resizedView!
+    }
+    
+    func resize_view(resizeView: CGSize, resizer: CGSize) -> CGSize{
+        resizedView?.width = resizeView.width  * (resizer.width/375.0)
+        resizedView?.height = resizeView.height  * (resizer.height/375.0)
+        resizedView = CGSize(width: resizeView.width  * (resizer.width/375.0), height: resizeView.height)
+        
+        return resizedView!
+    }
+    
+    /*
+    func resize_h(resizeView: CGSize, resizer: CGSize){
+        var resizedView: CGSize
+        
+        resizedView.height = resizeView.height  * (resizer.height/375.0)
+        
+        return resizedView.height
+    }
+ */
+    
+    /*
+    func responsive(responsivesize:CGSize){
+        if(responsivesize.width == 375.0 && responsivesize.height == 667.0){
+            //iphone8
+            
+        }else if(responsivesize.width == 320.0 && responsivesize.height == 568.0){
+            //iphoneSE
+            space_bottom_height.constant = space_bottom_height.constant*(responsivesize.height/667.0)
+            space_bottom_width.constant = space_bottom_width.constant*(responsivesize.width/375.0)
+            
+            //theme
+            theme.frame.size = resize(resizeView: theme.frame.size, resizer: responsivesize)
+            themeview.frame.size = resize_view(resizeView: themeview.frame.size, resizer: responsivesize)
+            
+            //album
+            album.frame.size = resize(resizeView: album.frame.size, resizer: responsivesize)
+            albumview.frame.size = resize_view(resizeView: albumview.frame.size, resizer: responsivesize)
+            
+            //image
+            imageheight.constant = imageheight.constant*(responsivesize.height/667.0)
+            imagewidth.constant = imagewidth.constant*(responsivesize.width/375.0)
+            
+            //eventview
+            eventnameView.frame.size = resize_view(resizeView: eventnameView.frame.size, resizer: responsivesize)
+            
+            
+        }else if(responsivesize.width == 414.0 && responsivesize.height == 736.0){
+            //iphone8plus
+            
+            //theme
+            theme.frame.size = resize(resizeView: theme.frame.size, resizer: responsivesize)
+            themeview.frame.size = resize_view(resizeView: themeview.frame.size, resizer: responsivesize)
+            
+            //album
+            album.frame.size = resize(resizeView: album.frame.size, resizer: responsivesize)
+            albumview.frame.size = resize_view(resizeView: albumview.frame.size, resizer: responsivesize)
+            
+            //image
+            imageheight.constant = imageheight.constant*(responsivesize.height/667.0)
+            imagewidth.constant = imagewidth.constant*(responsivesize.width/375.0)
+            
+            eventnameView.frame.size = resize_view(resizeView: eventnameView.frame.size, resizer: responsivesize)
+            
+        }else if(responsivesize.width == 375.0 && responsivesize.height == 812.0){
+            //iphoneX
+            space_bottom_height.constant = space_bottom_height.constant*(responsivesize.height/667.0)
+            space_bottom_width.constant = space_bottom_width.constant*(responsivesize.width/375.0)
+            
+            //theme
+            theme.frame.size = resize(resizeView: theme.frame.size, resizer: responsivesize)
+            themeview.frame.size = resize_view(resizeView: themeview.frame.size, resizer: responsivesize)
+            
+            //album
+            album.frame.size = resize(resizeView: album.frame.size, resizer: responsivesize)
+            albumview.frame.size = resize_view(resizeView: albumview.frame.size, resizer: responsivesize)
+            
+            //image
+            imageheight.constant = imageheight.constant*(responsivesize.height/667.0)
+            imagewidth.constant = imagewidth.constant*(responsivesize.width/375.0)
+            
+            eventnameView.frame.size = resize_view(resizeView: eventnameView.frame.size, resizer: responsivesize)
+            
+        }
+        
+    }
+ */
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let responsizer = appDelegate.display
+        
+        //responsive(responsivesize: responsizer!)
         
         searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: nil)
         
@@ -225,12 +352,9 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         */
  
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
-        self.slideMenuController()?.openLeft()
-        self.slideMenuController()?.closeLeft()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
             // your code here
-            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
-        }
+    self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        
         //self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
  
         //}

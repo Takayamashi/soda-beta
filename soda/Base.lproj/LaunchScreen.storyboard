@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,28 +19,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="pgr-bT-dwc">
-                                <rect key="frame" x="47" y="174" width="280" height="134"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_white_a" translatesAutoresizingMaskIntoConstraints="NO" id="pgr-bT-dwc">
+                                <rect key="frame" x="46.5" y="174" width="281" height="134.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pgr-bT-dwc" secondAttribute="height" multiplier="140:67" id="5dq-0n-teZ"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="好きなときに、好きな人と" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-Ix-sUC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好きなときに、好きな人と" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-Ix-sUC">
                                 <rect key="frame" x="35" y="329" width="304" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wha-Ix-sUC" secondAttribute="height" multiplier="152:15" id="82N-Tb-qFZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JH6-cu-Lk4" userLabel="space_top">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JH6-cu-Lk4" secondAttribute="height" multiplier="375:124" id="LhF-ed-Wrt"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.2666666667" green="0.4431372549" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pgr-bT-dwc" firstAttribute="top" secondItem="JH6-cu-Lk4" secondAttribute="bottom" constant="50" id="APX-Ni-Rjb"/>
+                            <constraint firstItem="JH6-cu-Lk4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GHD-Bg-wyc"/>
+                            <constraint firstItem="Wha-Ix-sUC" firstAttribute="top" secondItem="JH6-cu-Lk4" secondAttribute="bottom" constant="205" id="KjB-gz-Iir"/>
+                            <constraint firstItem="JH6-cu-Lk4" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="U8g-E5-PhT"/>
+                            <constraint firstItem="pgr-bT-dwc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UsP-Ka-XbF"/>
+                            <constraint firstItem="JH6-cu-Lk4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rzD-2d-YBR"/>
+                            <constraint firstItem="Wha-Ix-sUC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xlx-RY-dTm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="logo_white" width="1291" height="616"/>
+        <image name="logo_white_a" width="281" height="134"/>
     </resources>
 </document>

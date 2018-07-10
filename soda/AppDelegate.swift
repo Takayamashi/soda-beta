@@ -15,8 +15,11 @@ import FacebookLogin
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var display: CGSize?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        display = UIScreen.main.bounds.size
+        
         // Override point for customization after application launch.
         let image = UIImage(named: "back")?.withRenderingMode(.alwaysOriginal)
         UINavigationBar.appearance().backIndicatorImage = image
