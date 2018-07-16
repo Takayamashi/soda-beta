@@ -33,6 +33,7 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let profileconfigController = storyboard?.instantiateViewController(withIdentifier: "ProfileConfig") as! ProfileConfigViewController
         self.profileconfigViewController = UINavigationController(rootViewController: profileconfigController)
         
+        // storyboard変えたらうまく起動しない
         let makeeventController = storyboard?.instantiateViewController(withIdentifier: "MakeEvent") as! MakeEventViewController
         self.makeeventViewController = UINavigationController(rootViewController: makeeventController)
         

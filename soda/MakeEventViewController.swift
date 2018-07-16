@@ -169,8 +169,6 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let responsizer = appDelegate.display
         
         //responsive(responsivesize: responsizer!)
         
