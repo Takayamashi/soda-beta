@@ -38,7 +38,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="JH6-cu-Lk4" secondAttribute="height" multiplier="375:124" id="LhF-ed-Wrt"/>
+                                    <constraint firstAttribute="width" secondItem="JH6-cu-Lk4" secondAttribute="height" multiplier="375:124" id="ho4-1B-DNZ"/>
                                 </constraints>
                             </view>
                         </subviews>
