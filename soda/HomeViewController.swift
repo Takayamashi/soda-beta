@@ -16,6 +16,9 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tabBar: UITabBar!
     
+    //responsive
+    var resizedView: CGSize?
+    
     
     
     var cachedHeight = [IndexPath : CGFloat]()
@@ -64,6 +67,8 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         return UITableViewAutomaticDimension //変更
     }
     */
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         //self.slideMenuController()?.openLeftWithVelocity(1.0)
