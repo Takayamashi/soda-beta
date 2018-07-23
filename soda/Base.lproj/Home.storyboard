@@ -428,7 +428,7 @@
                                     <constraint firstAttribute="height" constant="729" id="a3R-k2-ijx"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="270" id="fLO-77-aRb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="270" id="fLO-77-aRb" customClass="HomeCell" customModule="soda" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="270"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fLO-77-aRb" id="tMW-1h-Dng">
@@ -442,7 +442,7 @@
                                                         <constraint firstAttribute="width" secondItem="VPn-wg-GVp" secondAttribute="height" multiplier="25:18" id="SUs-rg-rGZ"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おかし作り@BKC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkO-BL-cvW" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おかし作り@BKC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkO-BL-cvW" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="95" y="149.5" width="263.5" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="tkO-BL-cvW" secondAttribute="height" multiplier="90:7" id="iai-dR-W27"/>
@@ -469,7 +469,7 @@
                                                         <constraint firstAttribute="width" secondItem="DIi-6J-I5h" secondAttribute="height" multiplier="1:1" id="I8O-7a-UPS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaP-Wc-mY4" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaP-Wc-mY4" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="37" y="156.5" width="30" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uaP-Wc-mY4" secondAttribute="height" multiplier="5:3" id="hWz-T4-CsV"/>
@@ -478,7 +478,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23(木)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksq-Ug-yjC" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23(木)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksq-Ug-yjC" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="25" y="176.5" width="56" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Ksq-Ug-yjC" secondAttribute="height" multiplier="53:22" id="spU-RJ-uSL"/>
@@ -487,7 +487,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立命館" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yO-bw-V39" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立命館" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yO-bw-V39" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="22" y="202" width="57" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1yO-bw-V39" secondAttribute="height" multiplier="19:6" id="TJS-kk-IVe"/>
@@ -496,7 +496,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00~19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hib-YH-Ovf" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00~19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hib-YH-Ovf" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="125" y="185.5" width="205" height="14.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Hib-YH-Ovf" secondAttribute="height" multiplier="240:17" id="XTY-B0-nTQ"/>
@@ -505,7 +505,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018年4月30日に更新" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uj-Dq-VIS" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018年4月30日に更新" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uj-Dq-VIS" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="237.5" width="115" height="13.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="0Uj-Dq-VIS" secondAttribute="height" multiplier="135:16" id="Cte-bL-Oig"/>
@@ -514,7 +514,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BKCインキュベータ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vV-3Z-E0B" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BKCインキュベータ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vV-3Z-E0B" customClass="ISTDynamicLabel" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="125" y="207" width="240" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="3vV-3Z-E0B" secondAttribute="height" multiplier="16:1" id="MnK-YQ-ggV"/>
@@ -523,7 +523,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmW-dJ-9dQ" userLabel="ikitai">
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmW-dJ-9dQ" userLabel="ikitai" customClass="GoodUIButtonChecked" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="225" y="230" width="102" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="dmW-dJ-9dQ" secondAttribute="height" multiplier="34:9" id="kfk-Ni-LcK"/>
@@ -532,6 +532,9 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="CheckTapped:" destination="n3i-8Y-ccM" eventType="touchUpInside" id="sKL-oH-evD"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="8Xn-Xe-8kv">
                                                     <rect key="frame" x="330" y="230" width="26" height="26"/>
@@ -559,7 +562,7 @@
                                                         <constraint firstAttribute="width" secondItem="dmR-4g-PhG" secondAttribute="height" multiplier="1:27" id="gSc-5u-aoO"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRf-1J-C6D">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRf-1J-C6D">
                                                     <rect key="frame" x="334" y="234.5" width="21" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="HRf-1J-C6D" secondAttribute="height" multiplier="7:5" id="8ZY-80-zCb"/>
@@ -617,6 +620,9 @@
                                         <constraints>
                                             <constraint firstItem="axW-qF-s6T" firstAttribute="width" secondItem="fLO-77-aRb" secondAttribute="width" id="Td5-CT-Y0d"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="GoodCount" destination="HRf-1J-C6D" id="xFs-r2-iAl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="default">
@@ -1575,7 +1581,7 @@ AABZAAAAAAAAAAAAAAAAAAAhPQ
         <image name="facebook" width="26" height="26"/>
         <image name="fire" width="25" height="25"/>
         <image name="good" width="25" height="25"/>
-        <image name="goodbutton" width="102" height="27"/>
+        <image name="goodbutton" width="100" height="27"/>
         <image name="home" width="25" height="25"/>
         <image name="hukidashi" width="26" height="23"/>
         <image name="map" width="20" height="20"/>

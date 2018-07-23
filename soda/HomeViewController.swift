@@ -16,17 +16,17 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tabBar: UITabBar!
     
-    //responsive
-    var resizedView: CGSize?
+    var selectedGoodButton: UILabel!
     
     
+    var GoodCountArray = [String]()
     
     var cachedHeight = [IndexPath : CGFloat]()
-    
     
     // ボタン作成
     var searchButton: UIBarButtonItem?
     var noteButton: UIBarButtonItem?
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -68,7 +68,16 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     }
     */
     
-    
+    @IBAction func CheckTapped(_ sender: GoodUIButtonChecked) {
+        let botton = sender as UIButton
+        let cell = botton.superview?.superview as! HomeCell
+        
+        if sender.isChecked{
+            cell.GoodCount.text = String(Int(cell.GoodCount.text!)! - 1)
+        }else{
+            cell.GoodCount.text = String(Int(cell.GoodCount.text!)! + 1)
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         //self.slideMenuController()?.openLeftWithVelocity(1.0)
@@ -105,11 +114,11 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeCell
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.layoutIfNeeded()
         
@@ -122,6 +131,7 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         let EventDetailView = EventDetailstoryboard.instantiateViewController(withIdentifier: "EventDetail") as! EventDetailViewController
         EventDetailView.resultHandler = "text"
         self.show(EventDetailView, sender: nil)
+        
         
         //performSegue(withIdentifier: "EventDetail", sender: nil)
     }
