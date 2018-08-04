@@ -515,7 +515,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" tag="11" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmW-dJ-9dQ" userLabel="ikitai" customClass="GoodUIButtonChecked" customModule="soda" customModuleProvider="target">
+                                                <button opaque="NO" tag="11" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmW-dJ-9dQ" userLabel="ikitai">
                                                     <rect key="frame" x="225" y="230" width="102" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="dmW-dJ-9dQ" secondAttribute="height" multiplier="34:9" id="kfk-Ni-LcK"/>
@@ -525,7 +525,7 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="GoodButtonTapped:" destination="n3i-8Y-ccM" eventType="touchUpInside" id="xzW-e5-CQf"/>
+                                                        <action selector="GoodButtonTapp:" destination="n3i-8Y-ccM" eventType="touchUpInside" id="mnY-5z-W8h"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hukidashi" translatesAutoresizingMaskIntoConstraints="NO" id="8Xn-Xe-8kv">

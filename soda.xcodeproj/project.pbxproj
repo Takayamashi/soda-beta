@@ -41,7 +41,7 @@
 		6ACB951220D8979E00BF619D /* MadeEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ACB951120D8979E00BF619D /* MadeEvent.storyboard */; };
 		6ACB951420D8A13200BF619D /* ConfigEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACB951320D8A13200BF619D /* ConfigEventViewController.swift */; };
 		6AD4582521060A16003472B8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD4582421060A16003472B8 /* HomeCell.swift */; };
-		6AE54BD52105F27400702DBB /* GoodUIButtonChecked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE54BD42105F27400702DBB /* GoodUIButtonChecked.swift */; };
+		6AE54BD52105F27400702DBB /* GoodButtonChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE54BD42105F27400702DBB /* GoodButtonChecker.swift */; };
 		6AFEF61720D76459001F4C6B /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFEF61620D76459001F4C6B /* Animator.swift */; };
 		6AFEF61D20D7E9F3001F4C6B /* EventDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFEF61C20D7E9F3001F4C6B /* EventDetail.storyboard */; };
 		C93B889B2116615E84335E3A /* Pods_soda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A48058C96DB0B44BB35990 /* Pods_soda.framework */; };
@@ -86,7 +86,7 @@
 		6ACB951120D8979E00BF619D /* MadeEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MadeEvent.storyboard; sourceTree = "<group>"; };
 		6ACB951320D8A13200BF619D /* ConfigEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigEventViewController.swift; sourceTree = "<group>"; };
 		6AD4582421060A16003472B8 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		6AE54BD42105F27400702DBB /* GoodUIButtonChecked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodUIButtonChecked.swift; sourceTree = "<group>"; };
+		6AE54BD42105F27400702DBB /* GoodButtonChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodButtonChecker.swift; sourceTree = "<group>"; };
 		6AFEF61620D76459001F4C6B /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		6AFEF61C20D7E9F3001F4C6B /* EventDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventDetail.storyboard; sourceTree = "<group>"; };
 		D7A48058C96DB0B44BB35990 /* Pods_soda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_soda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,7 +226,7 @@
 				6A8F160720C119AC0098CBFD /* CheckBoxUIButton.swift */,
 				6A78BBA220CA6FD9000B3F12 /* UnivPickerTextField.swift */,
 				6A5A75EC20CC0EAE00F20459 /* ProfileTextView.swift */,
-				6AE54BD42105F27400702DBB /* GoodUIButtonChecked.swift */,
+				6AE54BD42105F27400702DBB /* GoodButtonChecker.swift */,
 				6AD4582421060A16003472B8 /* HomeCell.swift */,
 			);
 			path = Class;
@@ -374,7 +374,7 @@
 			files = (
 				6AFEF61720D76459001F4C6B /* Animator.swift in Sources */,
 				6A53134A20D4EC46008491EA /* EventDetailViewController.swift in Sources */,
-				6AE54BD52105F27400702DBB /* GoodUIButtonChecked.swift in Sources */,
+				6AE54BD52105F27400702DBB /* GoodButtonChecker.swift in Sources */,
 				6A296F7F20E8BEF600BA39E9 /* UIApplication.swift in Sources */,
 				6AB9C85F21152165007AE007 /* UIImage+changesize.swift in Sources */,
 				6A5A75EB20CC0B3300F20459 /* TextField+underline.swift in Sources */,

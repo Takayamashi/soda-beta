@@ -6,22 +6,18 @@
 //  Copyright © 2018年 Ryuichi Takayama. All rights reserved.
 //
 
-protocol CellDelegate {
-    func buttonDidTap()
-}
 
 import UIKit
 
 class HomeCell: UITableViewCell {
     
-    var count: Int = 0
+    var isChecked: Bool!
     
     let checkedImage = UIImage(named: "goodchecked")! as UIImage
     let uncheckedImage = UIImage(named: "goodbutton")! as UIImage
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        count = 0
     }
     
     @IBOutlet weak var GoodCount: UILabel!

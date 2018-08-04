@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GoodUIButtonChecked: UIButton {
+class GoodButtonChecker: UIButton {
     
     // Images
     let checkedImage = UIImage(named: "goodchecked")! as UIImage

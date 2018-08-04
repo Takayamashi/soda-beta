@@ -26,6 +26,7 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     var noteButton: UIBarButtonItem?
     
     var goodcount = [Int]()
+    var checkarray = [Bool]()
     
     
     override func viewDidLayoutSubviews() {
@@ -38,6 +39,7 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         super.viewDidLoad()
         
         goodcount = [1 ,2, 3, 4, 4, 9, 99, 100, 101, 9]
+        checkarray = [false, false,false,false,false,false,false,false,false,false]
         
         searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickSearchButton))
         
@@ -70,21 +72,42 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     }
     */
     
-    @IBAction func GoodButtonTapped(_ sender: GoodUIButtonChecked) {
+    @IBAction func GoodButtonTapp(_ sender: UIButton) {
         let row = sender.tag
         let indexPath = IndexPath(row: row, section: 0)
         
+        if checkarray[row] == false{
+            checkarray[row] = true
+            goodcount[row] += 1
+        }else{
+            checkarray[row] = false
+            goodcount[row] -= 1
+        }
+        
         print(row)
         
-        let cell = tableView.cellForRow(at: indexPath) as! HomeCell
+        self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
         
+        //let cell = tableView.cellForRow(at: indexPath) as! HomeCell
         
-        if sender.isChecked{
+        // Images
+        /*
+        let checkedImage = UIImage(named: "goodchecked")! as UIImage
+        let uncheckedImage = UIImage(named: "goodbutton")! as UIImage
+        
+        // Bool property
+        if cell.isChecked == false {
+            cell.GoodButton.setImage(checkedImage, for: UIControlState.normal)
             cell.GoodCount.text = String(Int(cell.GoodCount.text!)! + 1)
-        }else{
+            cell.isChecked = true
+        } else {
+            cell.GoodButton.setImage(uncheckedImage, for: UIControlState.normal)
             cell.GoodCount.text = String(Int(cell.GoodCount.text!)! - 1)
+            cell.isChecked = false
         }
-    }
+         */
+        
+        }
     
 
     
@@ -133,6 +156,16 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         
         cell.GoodCount.text = String(goodcount[indexPath.row])
         cell.GoodButton.tag = indexPath.row
+        cell.isChecked = checkarray[indexPath.row]
+        
+        let checkedImage = UIImage(named: "goodchecked")! as UIImage
+        let uncheckedImage = UIImage(named: "goodbutton")! as UIImage
+        
+        if cell.isChecked == true {
+            cell.GoodButton.setImage(checkedImage, for: UIControlState.normal)
+        } else {
+            cell.GoodButton.setImage(uncheckedImage, for: UIControlState.normal)
+        }
 
         
         return cell
