@@ -247,11 +247,6 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="3me-Gm-7fd">
                                                 <rect key="frame" x="135" y="8" width="80" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDA-Dx-xMV">
                                                 <rect key="frame" x="50" y="52" width="27" height="16"/>
@@ -1780,6 +1775,6 @@ kg+VD5oPqQ+tD7gPwA/ND9oP7w/0D/gP+g/8D/4QBxAMEBIQGhAcEB4QIBAiECcQLyGbIZ0hoiGwIbQh
 uyHAIc0h0CHdIeIh6iHtIfIh+iH9Ig8iEiIXAAAAAAAAAgEAAAAAAAAAWQAAAAAAAAAAAAAAAAAAIhk
 </mutableData>
         </image>
-        <image name="profile" width="256" height="256"/>
+        <image name="profile" width="80" height="80"/>
     </resources>
 </document>

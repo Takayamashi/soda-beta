@@ -19,13 +19,13 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     var selectedGoodButton: UILabel!
     
     
-    var GoodCountArray = [String]()
-    
     var cachedHeight = [IndexPath : CGFloat]()
     
     // ボタン作成
     var searchButton: UIBarButtonItem?
     var noteButton: UIBarButtonItem?
+    
+    var goodcount = [Int]()
     
     
     override func viewDidLayoutSubviews() {
@@ -36,6 +36,8 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        goodcount = [1 ,2, 3, 4, 4, 9, 99, 100, 101, 9]
         
         searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickSearchButton))
         
@@ -68,16 +70,23 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     }
     */
     
-    @IBAction func CheckTapped(_ sender: GoodUIButtonChecked) {
-        let botton = sender as UIButton
-        let cell = botton.superview?.superview as! HomeCell
+    @IBAction func GoodButtonTapped(_ sender: GoodUIButtonChecked) {
+        let row = sender.tag
+        let indexPath = IndexPath(row: row, section: 0)
+        
+        print(row)
+        
+        let cell = tableView.cellForRow(at: indexPath) as! HomeCell
+        
         
         if sender.isChecked{
-            cell.GoodCount.text = String(Int(cell.GoodCount.text!)! - 1)
-        }else{
             cell.GoodCount.text = String(Int(cell.GoodCount.text!)! + 1)
+        }else{
+            cell.GoodCount.text = String(Int(cell.GoodCount.text!)! - 1)
         }
     }
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         //self.slideMenuController()?.openLeftWithVelocity(1.0)
@@ -114,13 +123,17 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HomeCell
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.layoutIfNeeded()
+        
+        cell.GoodCount.text = String(goodcount[indexPath.row])
+        cell.GoodButton.tag = indexPath.row
+
         
         return cell
     }
