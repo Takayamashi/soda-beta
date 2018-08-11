@@ -15,6 +15,7 @@
 		6A0FE79620BBF62700F57405 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FE79420BBF62700F57405 /* Home.storyboard */; };
 		6A0FE79820BBF62900F57405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FE79720BBF62900F57405 /* Assets.xcassets */; };
 		6A0FE79B20BBF62900F57405 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0FE79920BBF62900F57405 /* LaunchScreen.storyboard */; };
+		6A1F9C63211E84F100546D40 /* ResponsivelineChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1F9C62211E84F100546D40 /* ResponsivelineChange.swift */; };
 		6A25BDCF20EB5AD30041FDB3 /* UILabel+change.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A25BDCE20EB5AD30041FDB3 /* UILabel+change.swift */; };
 		6A296F7F20E8BEF600BA39E9 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A296F7E20E8BEF600BA39E9 /* UIApplication.swift */; };
 		6A2DAF5220D8EA18001554E8 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2DAF5120D8EA18001554E8 /* Notification.storyboard */; };
@@ -60,6 +61,7 @@
 		6A0FE79720BBF62900F57405 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A0FE79A20BBF62900F57405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A0FE79C20BBF62900F57405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A1F9C62211E84F100546D40 /* ResponsivelineChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsivelineChange.swift; sourceTree = "<group>"; };
 		6A25BDCE20EB5AD30041FDB3 /* UILabel+change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+change.swift"; sourceTree = "<group>"; };
 		6A296F7E20E8BEF600BA39E9 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		6A2DAF5120D8EA18001554E8 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				6A5A75EC20CC0EAE00F20459 /* ProfileTextView.swift */,
 				6AE54BD42105F27400702DBB /* GoodButtonChecker.swift */,
 				6AD4582421060A16003472B8 /* HomeCell.swift */,
+				6A1F9C62211E84F100546D40 /* ResponsivelineChange.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A1F9C63211E84F100546D40 /* ResponsivelineChange.swift in Sources */,
 				6AFEF61720D76459001F4C6B /* Animator.swift in Sources */,
 				6A53134A20D4EC46008491EA /* EventDetailViewController.swift in Sources */,
 				6AE54BD52105F27400702DBB /* GoodButtonChecker.swift in Sources */,
