@@ -939,7 +939,7 @@
         <!--Make Event View Controller-->
         <scene sceneID="XAv-aN-aY4">
             <objects>
-                <viewController id="yfw-Iv-dn8" customClass="MakeEventViewController" customModule="soda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeEvent320" id="yfw-Iv-dn8" customClass="MakeEventViewController" customModule="soda" customModuleProvider="target" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="uYA-gS-YY6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1194"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1299,10 +1299,10 @@
             </objects>
             <point key="canvasLocation" x="1755" y="2497"/>
         </scene>
-        <!--View Controller-->
+        <!--Make Event View Controller-->
         <scene sceneID="CFL-fg-iNS">
             <objects>
-                <viewController id="OPZ-1N-OtL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeEvent414" id="OPZ-1N-OtL" customClass="MakeEventViewController" customModule="soda" customModuleProvider="target" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iTn-v2-NCQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1545"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1668,7 +1668,7 @@
         <!--Make Event View Controller-->
         <scene sceneID="azC-aO-sN7">
             <objects>
-                <viewController storyboardIdentifier="MakeEvent" id="lTo-LI-QcB" customClass="MakeEventViewController" customModule="soda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeEvent375" id="lTo-LI-QcB" customClass="MakeEventViewController" customModule="soda" customModuleProvider="target" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oz7-V4-5b3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
