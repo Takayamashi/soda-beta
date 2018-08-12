@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Confirm View Controller-->
         <scene sceneID="oZp-WY-tTh">
             <objects>
-                <viewController id="NM6-CA-C42" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Confirm414" id="NM6-CA-C42" customClass="ConfirmViewController" customModule="soda" customModuleProvider="target" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TxY-qa-1Gt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1324"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -367,7 +367,7 @@
         <!--Confirm View Controller-->
         <scene sceneID="53Q-l9-Xz1">
             <objects>
-                <viewController storyboardIdentifier="Confirm" id="W3t-At-91k" customClass="ConfirmViewController" customModule="soda" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Confirm375" id="W3t-At-91k" customClass="ConfirmViewController" customModule="soda" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cAb-6n-2Mp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -709,10 +709,10 @@
             </objects>
             <point key="canvasLocation" x="1587.1875" y="1167.2535211267607"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirm View Controller-->
         <scene sceneID="lL2-CN-VJh">
             <objects>
-                <viewController id="3b1-10-tUs" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Confirm320" id="3b1-10-tUs" customClass="ConfirmViewController" customModule="soda" customModuleProvider="target" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fwk-x4-c9B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
