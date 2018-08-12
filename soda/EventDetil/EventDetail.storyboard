@@ -313,11 +313,11 @@
             <objects>
                 <viewController id="GnK-ng-vBN" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="JSU-aP-Ibv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1324"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qd-8P-97w">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1324"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="イベント名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyx-Nz-EqR">
                                         <rect key="frame" x="22" y="28" width="102" height="24"/>
@@ -622,38 +622,38 @@
                                     <constraint firstItem="qcR-KI-bMH" firstAttribute="top" secondItem="1qd-8P-97w" secondAttribute="top" constant="152" id="cnx-aG-fld"/>
                                     <constraint firstAttribute="trailing" secondItem="zyx-Nz-EqR" secondAttribute="trailing" constant="290" id="dRn-zP-oMY"/>
                                     <constraint firstItem="6ea-xC-G9q" firstAttribute="top" secondItem="1qd-8P-97w" secondAttribute="top" constant="228" id="k9Z-PW-CvX"/>
-                                    <constraint firstAttribute="height" constant="1324" id="mgQ-cN-jB4"/>
                                     <constraint firstAttribute="trailing" secondItem="7Vz-5T-uZF" secondAttribute="trailing" constant="320" id="nle-Y0-LBa"/>
                                     <constraint firstAttribute="trailing" secondItem="u1E-UO-YsI" secondAttribute="trailing" constant="92" id="oXf-yk-B9e"/>
+                                    <constraint firstAttribute="height" constant="1200" id="qPc-qU-GUW"/>
                                     <constraint firstItem="pec-YN-l54" firstAttribute="top" secondItem="1qd-8P-97w" secondAttribute="top" constant="94" id="vjl-nz-9oC"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="1qd-8P-97w" secondAttribute="bottom" id="1GL-Um-iFh"/>
-                            <constraint firstItem="Pgm-NK-Yvh" firstAttribute="width" secondItem="1qd-8P-97w" secondAttribute="width" id="80s-Ly-im9"/>
-                            <constraint firstAttribute="trailing" secondItem="1qd-8P-97w" secondAttribute="trailing" id="FjY-ki-hjN"/>
-                            <constraint firstItem="1qd-8P-97w" firstAttribute="leading" secondItem="JSU-aP-Ibv" secondAttribute="leading" id="UT3-b8-9F5"/>
-                            <constraint firstItem="1qd-8P-97w" firstAttribute="top" secondItem="JSU-aP-Ibv" secondAttribute="top" id="uZd-87-zhr"/>
+                            <constraint firstItem="1qd-8P-97w" firstAttribute="top" secondItem="JSU-aP-Ibv" secondAttribute="top" id="9Gt-dX-wIQ"/>
+                            <constraint firstItem="1qd-8P-97w" firstAttribute="leading" secondItem="JSU-aP-Ibv" secondAttribute="leading" id="TPE-0e-dSV"/>
+                            <constraint firstAttribute="bottom" secondItem="1qd-8P-97w" secondAttribute="bottom" id="cl5-Th-6So"/>
+                            <constraint firstAttribute="trailing" secondItem="1qd-8P-97w" secondAttribute="trailing" id="qID-dW-2GZ"/>
+                            <constraint firstItem="Pgm-NK-Yvh" firstAttribute="width" secondItem="1qd-8P-97w" secondAttribute="width" id="v7j-bT-829"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pgm-NK-Yvh"/>
                     </scrollView>
-                    <size key="freeformSize" width="414" height="1324"/>
+                    <size key="freeformSize" width="414" height="1200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5n-ZQ-9KC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-74" y="1167"/>
+            <point key="canvasLocation" x="-75.200000000000003" y="1166.7166416791606"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="GKc-Lm-wUI">
             <objects>
                 <viewController storyboardIdentifier="Confirm" id="4LW-sc-oLT" customClass="ConfirmViewController" customModule="soda" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="wgw-w7-t0r">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1116"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIS-qv-UTh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1116"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="イベント名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIw-Ux-cVa">
                                         <rect key="frame" x="22" y="28" width="87" height="20.5"/>
@@ -949,42 +949,39 @@
                                     <constraint firstAttribute="trailing" secondItem="iPo-uC-CUP" secondAttribute="trailing" constant="68" id="NLB-cn-ESD"/>
                                     <constraint firstItem="rL2-Cd-IHg" firstAttribute="top" secondItem="IIS-qv-UTh" secondAttribute="top" constant="119" id="PZB-xZ-qid"/>
                                     <constraint firstAttribute="trailing" secondItem="OqZ-hN-l6X" secondAttribute="trailing" constant="311" id="SCj-dc-qqG"/>
+                                    <constraint firstAttribute="height" constant="1116" id="W9w-WT-QYI"/>
                                     <constraint firstAttribute="trailing" secondItem="to0-zs-TVC" secondAttribute="trailing" constant="24" id="cf3-bl-mhR"/>
                                     <constraint firstItem="9YY-Xh-0IE" firstAttribute="top" secondItem="IIS-qv-UTh" secondAttribute="top" constant="228" id="kY9-Yx-l8J"/>
                                     <constraint firstItem="OqZ-hN-l6X" firstAttribute="top" secondItem="IIS-qv-UTh" secondAttribute="top" constant="90" id="ngr-93-WWU"/>
-                                    <constraint firstAttribute="height" constant="1200" id="rNP-Kc-8pB"/>
                                     <constraint firstItem="iPo-uC-CUP" firstAttribute="top" secondItem="IIS-qv-UTh" secondAttribute="top" constant="896" id="vG7-EK-xUZ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="IIS-qv-UTh" firstAttribute="leading" secondItem="wgw-w7-t0r" secondAttribute="leading" id="3eF-zo-JSG"/>
-                            <constraint firstItem="IIS-qv-UTh" firstAttribute="leading" secondItem="wgw-w7-t0r" secondAttribute="leading" id="DzU-dg-v8e"/>
-                            <constraint firstItem="IIS-qv-UTh" firstAttribute="top" secondItem="wgw-w7-t0r" secondAttribute="top" id="Tu4-PL-KOI"/>
-                            <constraint firstAttribute="trailing" secondItem="IIS-qv-UTh" secondAttribute="trailing" id="jsM-Iz-Xu3"/>
-                            <constraint firstItem="f9p-k0-NBT" firstAttribute="width" secondItem="IIS-qv-UTh" secondAttribute="width" id="m07-QA-L81"/>
-                            <constraint firstAttribute="bottom" secondItem="IIS-qv-UTh" secondAttribute="bottom" id="sOe-zc-blb"/>
-                            <constraint firstItem="IIS-qv-UTh" firstAttribute="top" secondItem="wgw-w7-t0r" secondAttribute="top" id="xor-WQ-G6e"/>
-                            <constraint firstAttribute="trailing" secondItem="IIS-qv-UTh" secondAttribute="trailing" id="yd1-1U-6XI"/>
+                            <constraint firstAttribute="trailing" secondItem="IIS-qv-UTh" secondAttribute="trailing" id="4fI-eC-PNd"/>
+                            <constraint firstItem="f9p-k0-NBT" firstAttribute="width" secondItem="IIS-qv-UTh" secondAttribute="width" id="58s-qP-Uni"/>
+                            <constraint firstItem="IIS-qv-UTh" firstAttribute="top" secondItem="wgw-w7-t0r" secondAttribute="top" id="BVF-3N-Ol5"/>
+                            <constraint firstAttribute="bottom" secondItem="IIS-qv-UTh" secondAttribute="bottom" id="CVb-7L-F1V"/>
+                            <constraint firstItem="IIS-qv-UTh" firstAttribute="leading" secondItem="wgw-w7-t0r" secondAttribute="leading" id="QKl-v6-bGP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f9p-k0-NBT"/>
                     </scrollView>
-                    <size key="freeformSize" width="375" height="1200"/>
+                    <size key="freeformSize" width="375" height="1116"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12X-XW-Xsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="1099"/>
+            <point key="canvasLocation" x="805.60000000000002" y="1098.3508245877063"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zff-Kd-Ozx">
             <objects>
                 <viewController id="Pwa-wk-9QD" sceneMemberID="viewController">
                     <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dAb-Hy-5OW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="970"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8B-Xp-rX2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="970"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="イベント名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLd-Fw-adK">
                                         <rect key="frame" x="22.5" y="28" width="71.5" height="17"/>
@@ -1207,7 +1204,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksD-uW-FUJ">
-                                        <rect key="frame" x="60" y="767" width="200" height="183"/>
+                                        <rect key="frame" x="60" y="713" width="200" height="183"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="主催者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKW-Mv-MtP">
                                                 <rect key="frame" x="24" y="8" width="46" height="18"/>
@@ -1273,11 +1270,11 @@
                                     <constraint firstAttribute="trailing" secondItem="jLd-Fw-adK" secondAttribute="trailing" constant="226" id="4Lq-yY-RhY"/>
                                     <constraint firstItem="PAY-Al-RI2" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="65" id="5o6-ze-OMI"/>
                                     <constraint firstAttribute="trailing" secondItem="ksD-uW-FUJ" secondAttribute="trailing" constant="60" id="Ec6-IA-pow"/>
+                                    <constraint firstAttribute="height" constant="970" id="Jtd-ae-Cfn"/>
                                     <constraint firstAttribute="trailing" secondItem="PAY-Al-RI2" secondAttribute="trailing" constant="16" id="Mqf-aU-M2k"/>
                                     <constraint firstItem="VsW-pj-bG2" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="228" id="N5F-ng-aBj"/>
                                     <constraint firstItem="WVC-Of-fYe" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="140" id="N8g-Ni-GEX"/>
                                     <constraint firstItem="8gT-kh-kDO" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="82" id="NF4-ym-8vT"/>
-                                    <constraint firstAttribute="height" constant="1024" id="Q2B-CN-d3E"/>
                                     <constraint firstAttribute="bottom" secondItem="ksD-uW-FUJ" secondAttribute="bottom" constant="74" id="VbF-DN-1ki"/>
                                     <constraint firstItem="jLd-Fw-adK" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="28" id="ZlE-l8-6kP"/>
                                     <constraint firstAttribute="trailing" secondItem="6zD-Oj-XJ6" secondAttribute="trailing" constant="244" id="g4F-iI-cY6"/>
@@ -1290,19 +1287,19 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Y8B-Xp-rX2" firstAttribute="top" secondItem="dAb-Hy-5OW" secondAttribute="top" id="GG5-Vi-1qK"/>
-                            <constraint firstItem="ILA-gf-1p5" firstAttribute="width" secondItem="Y8B-Xp-rX2" secondAttribute="width" id="ast-hY-r7M"/>
-                            <constraint firstItem="Y8B-Xp-rX2" firstAttribute="leading" secondItem="dAb-Hy-5OW" secondAttribute="leading" id="g0N-1g-Fgw"/>
-                            <constraint firstAttribute="trailing" secondItem="Y8B-Xp-rX2" secondAttribute="trailing" id="jHk-lR-9k5"/>
-                            <constraint firstAttribute="bottom" secondItem="Y8B-Xp-rX2" secondAttribute="bottom" id="uyC-hi-zqI"/>
+                            <constraint firstItem="Y8B-Xp-rX2" firstAttribute="top" secondItem="dAb-Hy-5OW" secondAttribute="top" id="Ego-CL-teA"/>
+                            <constraint firstItem="Y8B-Xp-rX2" firstAttribute="leading" secondItem="dAb-Hy-5OW" secondAttribute="leading" id="LJr-SJ-rQx"/>
+                            <constraint firstItem="ILA-gf-1p5" firstAttribute="width" secondItem="Y8B-Xp-rX2" secondAttribute="width" id="S2h-28-J8A"/>
+                            <constraint firstAttribute="trailing" secondItem="Y8B-Xp-rX2" secondAttribute="trailing" id="XZo-qv-c8Y"/>
+                            <constraint firstAttribute="bottom" secondItem="Y8B-Xp-rX2" secondAttribute="bottom" id="iIx-8A-5wC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ILA-gf-1p5"/>
                     </scrollView>
-                    <size key="freeformSize" width="320" height="1024"/>
+                    <size key="freeformSize" width="320" height="970"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6W-gR-aKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="1007"/>
+            <point key="canvasLocation" x="1644.8" y="1006.5967016491755"/>
         </scene>
     </scenes>
     <resources>
