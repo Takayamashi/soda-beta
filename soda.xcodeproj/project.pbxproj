@@ -147,7 +147,7 @@
 				6A440F3A20BE5F74002EED8C /* MakeEventViewController.swift */,
 				6A6B832020C8DC90009B60F3 /* ProfileConfigViewController.swift */,
 				6A4D37A920CFD1C9000A6652 /* MadeEventViewController.swift */,
-				6A1F9C64211E8A5B00546D40 /* iphone8 */,
+				6A1F9C64211E8A5B00546D40 /* Home */,
 				6A9F01FA20DA94CE00AFC6F5 /* AgreementViewController.swift */,
 				6A5708A120E2111E0006F813 /* Login */,
 				6A2DAF5320D8EA46001554E8 /* Notification */,
@@ -161,12 +161,12 @@
 			path = soda;
 			sourceTree = "<group>";
 		};
-		6A1F9C64211E8A5B00546D40 /* iphone8 */ = {
+		6A1F9C64211E8A5B00546D40 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				6A0FE79420BBF62700F57405 /* Home.storyboard */,
 			);
-			path = iphone8;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		6A2DAF4F20D8E730001554E8 /* EventDetil */ = {
