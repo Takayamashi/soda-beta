@@ -30,18 +30,48 @@ class LeftViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         
-        let profileconfigController = storyboard?.instantiateViewController(withIdentifier: "ProfileConfig") as! ProfileConfigViewController
-        self.profileconfigViewController = UINavigationController(rootViewController: profileconfigController)
-        
         // storyboard変えたらうまく起動しない
-        let makeeventController = storyboard?.instantiateViewController(withIdentifier: "MakeEvent") as! MakeEventViewController
-        self.makeeventViewController = UINavigationController(rootViewController: makeeventController)
         
+        //appdelegateよりwindowサイズを抜き出すため呼び出し
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        //makeeventviewのレスポンシブ対応viewの定義
+        let makeeventController375 = storyboard?.instantiateViewController(withIdentifier: "MakeEvent375") as! MakeEventViewController
+        let makeeventController320 = storyboard?.instantiateViewController(withIdentifier: "MakeEvent320") as! MakeEventViewController
+        let makeeventController414 = storyboard?.instantiateViewController(withIdentifier: "MakeEvent414") as! MakeEventViewController
+        
+        
+        //profileconfigviewの定義
+        let profileconfigController375 = storyboard?.instantiateViewController(withIdentifier: "ProfileConfig375") as! ProfileConfigViewController
+        let profileconfigController320 = storyboard?.instantiateViewController(withIdentifier: "ProfileConfig320") as! ProfileConfigViewController
+        let profileconfigController414 = storyboard?.instantiateViewController(withIdentifier: "ProfileConfig414") as! ProfileConfigViewController
+        
+        
+        //madeeventviewの定義
         let madeeventController = storyboard?.instantiateViewController(withIdentifier: "MadeEvent") as! MadeEventViewController
-        self.madeeventViewController = UINavigationController(rootViewController: madeeventController)
         
+        //規約画面の定義
         let agreementController = storyboard?.instantiateViewController(withIdentifier: "Agreement") as! AgreementViewController
-        self.agreementViewController = UINavigationController(rootViewController: agreementController)
+        
+        if appDelegate.display?.width == 320{
+            self.makeeventViewController = UINavigationController(rootViewController: makeeventController320)
+            self.profileconfigViewController = UINavigationController(rootViewController: profileconfigController320)
+            self.madeeventViewController = UINavigationController(rootViewController: madeeventController)
+            self.agreementViewController = UINavigationController(rootViewController: agreementController)
+            
+        }else if appDelegate.display?.width == 375{
+            self.makeeventViewController = UINavigationController(rootViewController: makeeventController375)
+            self.profileconfigViewController = UINavigationController(rootViewController: profileconfigController375)
+            self.madeeventViewController = UINavigationController(rootViewController: madeeventController)
+            self.agreementViewController = UINavigationController(rootViewController: agreementController)
+            
+        }else if appDelegate.display?.width == 414{
+            self.makeeventViewController = UINavigationController(rootViewController: makeeventController414)
+            self.profileconfigViewController = UINavigationController(rootViewController: profileconfigController414)
+            self.madeeventViewController = UINavigationController(rootViewController: madeeventController)
+            self.agreementViewController = UINavigationController(rootViewController: agreementController)
+            
+        }
         
         
         

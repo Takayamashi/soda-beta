@@ -33,6 +33,11 @@
 		6A5A75ED20CC0EAE00F20459 /* ProfileTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5A75EC20CC0EAE00F20459 /* ProfileTextView.swift */; };
 		6A65B9C620E7713E00F62AE2 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A65B9C520E7713E00F62AE2 /* Transition.swift */; };
 		6A6B832120C8DC90009B60F3 /* ProfileConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B832020C8DC90009B60F3 /* ProfileConfigViewController.swift */; };
+		6A6E68C0212718300015FFE4 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E68BF212718300015FFE4 /* MaterialButton.swift */; };
+		6A6E68C221271D8C0015FFE4 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E68C121271D8C0015FFE4 /* SearchTableViewController.swift */; };
+		6A6E68C521271DC60015FFE4 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A6E68C421271DC60015FFE4 /* Search.storyboard */; };
+		6A6E68C721271FB30015FFE4 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E68C621271FB30015FFE4 /* SearchResultViewController.swift */; };
+		6A6E68C921271FD70015FFE4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E68C821271FD70015FFE4 /* DetailViewController.swift */; };
 		6A78BBA320CA6FD9000B3F12 /* UnivPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A78BBA220CA6FD9000B3F12 /* UnivPickerTextField.swift */; };
 		6A8B4BA020BD2D6600760FAA /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B4B9F20BD2D6600760FAA /* UIView+Border.swift */; };
 		6A8B4BAA20BD92E000760FAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8B4BA920BD92E000760FAA /* HomeViewController.swift */; };
@@ -81,6 +86,11 @@
 		6A5A75EC20CC0EAE00F20459 /* ProfileTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextView.swift; sourceTree = "<group>"; };
 		6A65B9C520E7713E00F62AE2 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		6A6B832020C8DC90009B60F3 /* ProfileConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfigViewController.swift; sourceTree = "<group>"; };
+		6A6E68BF212718300015FFE4 /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		6A6E68C121271D8C0015FFE4 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		6A6E68C421271DC60015FFE4 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		6A6E68C621271FB30015FFE4 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		6A6E68C821271FD70015FFE4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6A78BBA220CA6FD9000B3F12 /* UnivPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnivPickerTextField.swift; sourceTree = "<group>"; };
 		6A8B4B9F20BD2D6600760FAA /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		6A8B4BA920BD92E000760FAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +164,7 @@
 				6A2DAF5020D8E80E001554E8 /* MadeEvent */,
 				6A2DAF4F20D8E730001554E8 /* EventDetil */,
 				6A2DAF5520D8FC32001554E8 /* MakeEvent */,
+				6A6E68C321271D930015FFE4 /* Seach */,
 				6A0FE79720BBF62900F57405 /* Assets.xcassets */,
 				6A0FE79920BBF62900F57405 /* LaunchScreen.storyboard */,
 				6A0FE79C20BBF62900F57405 /* Info.plist */,
@@ -215,6 +226,17 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		6A6E68C321271D930015FFE4 /* Seach */ = {
+			isa = PBXGroup;
+			children = (
+				6A6E68C121271D8C0015FFE4 /* SearchTableViewController.swift */,
+				6A6E68C621271FB30015FFE4 /* SearchResultViewController.swift */,
+				6A6E68C821271FD70015FFE4 /* DetailViewController.swift */,
+				6A6E68C421271DC60015FFE4 /* Search.storyboard */,
+			);
+			path = Seach;
+			sourceTree = "<group>";
+		};
 		6A8B4B9E20BD2B1200760FAA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +264,7 @@
 				6AD4582421060A16003472B8 /* HomeCell.swift */,
 				6A1F9C62211E84F100546D40 /* TaxtViewLine.swift */,
 				6A1F9C67211EB68E00546D40 /* UIButtonLine.swift */,
+				6A6E68BF212718300015FFE4 /* MaterialButton.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -315,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A0FE79B20BBF62900F57405 /* LaunchScreen.storyboard in Resources */,
+				6A6E68C521271DC60015FFE4 /* Search.storyboard in Resources */,
 				6A440F3920BE319B002EED8C /* images.xcassets in Resources */,
 				6A0FE79820BBF62900F57405 /* Assets.xcassets in Resources */,
 				6A2DAF5720D90FCA001554E8 /* MakeEvent.storyboard in Resources */,
@@ -387,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A1F9C63211E84F100546D40 /* TaxtViewLine.swift in Sources */,
+				6A6E68C921271FD70015FFE4 /* DetailViewController.swift in Sources */,
 				6AFEF61720D76459001F4C6B /* Animator.swift in Sources */,
 				6A53134A20D4EC46008491EA /* EventDetailViewController.swift in Sources */,
 				6AE54BD52105F27400702DBB /* GoodButtonChecker.swift in Sources */,
@@ -405,13 +430,16 @@
 				6A0A09CF20C3C6B700042E30 /* LeftViewController.swift in Sources */,
 				6A0B002220CCB85E00B24E01 /* ConfirmEventViewController.swift in Sources */,
 				6A5708A320E22A590006F813 /* ConfirmViewController.swift in Sources */,
+				6A6E68C721271FB30015FFE4 /* SearchResultViewController.swift in Sources */,
 				6A78BBA320CA6FD9000B3F12 /* UnivPickerTextField.swift in Sources */,
 				6A9F01FB20DA94CE00AFC6F5 /* AgreementViewController.swift in Sources */,
 				6A4D37AA20CFD1C9000A6652 /* MadeEventViewController.swift in Sources */,
 				6ACB951420D8A13200BF619D /* ConfigEventViewController.swift in Sources */,
+				6A6E68C221271D8C0015FFE4 /* SearchTableViewController.swift in Sources */,
 				6A65B9C620E7713E00F62AE2 /* Transition.swift in Sources */,
 				6A5A75ED20CC0EAE00F20459 /* ProfileTextView.swift in Sources */,
 				6A0FE79120BBF62700F57405 /* AppDelegate.swift in Sources */,
+				6A6E68C0212718300015FFE4 /* MaterialButton.swift in Sources */,
 				6A8B4BA020BD2D6600760FAA /* UIView+Border.swift in Sources */,
 				6A6B832120C8DC90009B60F3 /* ProfileConfigViewController.swift in Sources */,
 				6A8B4BAA20BD92E000760FAA /* HomeViewController.swift in Sources */,

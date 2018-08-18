@@ -9,7 +9,6 @@
 import UIKit
 
 class EventDetailViewController: UIViewController {
-    var resultHandler: String!
     
     var myLeftButton: UIBarButtonItem!
     var mainViewController: UIViewController!
@@ -87,7 +86,6 @@ class EventDetailViewController: UIViewController {
     
     @objc func clickshareButton(_ sender: Any) {
         alertControll()
-        print(resultHandler)
     }
     
     @objc func goodButton(_ sender: Any) {

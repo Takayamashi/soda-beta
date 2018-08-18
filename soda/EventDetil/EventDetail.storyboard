@@ -344,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5n-ZQ-9KC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-75.200000000000003" y="1166.7166416791606"/>
+            <point key="canvasLocation" x="-69" y="1161"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="GKc-Lm-wUI">
@@ -592,7 +592,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
@@ -672,7 +672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12X-XW-Xsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="1124"/>
+            <point key="canvasLocation" x="745" y="1123"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="zff-Kd-Ozx">
@@ -906,7 +906,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksD-uW-FUJ">
-                                        <rect key="frame" x="60" y="713" width="200" height="183"/>
+                                        <rect key="frame" x="60" y="753" width="200" height="183"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="主催者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKW-Mv-MtP">
                                                 <rect key="frame" x="24" y="8" width="46" height="18"/>
@@ -944,7 +944,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="45"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
@@ -973,11 +973,11 @@
                                     <constraint firstItem="PAY-Al-RI2" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="65" id="5o6-ze-OMI"/>
                                     <constraint firstAttribute="trailing" secondItem="ksD-uW-FUJ" secondAttribute="trailing" constant="60" id="Ec6-IA-pow"/>
                                     <constraint firstAttribute="height" constant="970" id="Jtd-ae-Cfn"/>
+                                    <constraint firstAttribute="bottom" secondItem="ksD-uW-FUJ" secondAttribute="bottom" constant="34" id="Mjc-0j-yjf"/>
                                     <constraint firstAttribute="trailing" secondItem="PAY-Al-RI2" secondAttribute="trailing" constant="16" id="Mqf-aU-M2k"/>
                                     <constraint firstItem="VsW-pj-bG2" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="228" id="N5F-ng-aBj"/>
                                     <constraint firstItem="WVC-Of-fYe" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="140" id="N8g-Ni-GEX"/>
                                     <constraint firstItem="8gT-kh-kDO" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="82" id="NF4-ym-8vT"/>
-                                    <constraint firstAttribute="bottom" secondItem="ksD-uW-FUJ" secondAttribute="bottom" constant="74" id="VbF-DN-1ki"/>
                                     <constraint firstItem="jLd-Fw-adK" firstAttribute="top" secondItem="Y8B-Xp-rX2" secondAttribute="top" constant="28" id="ZlE-l8-6kP"/>
                                     <constraint firstAttribute="trailing" secondItem="6zD-Oj-XJ6" secondAttribute="trailing" constant="244" id="g4F-iI-cY6"/>
                                     <constraint firstAttribute="trailing" secondItem="VsW-pj-bG2" secondAttribute="trailing" constant="17" id="mah-wf-jr5"/>
@@ -1001,7 +1001,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6W-gR-aKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464" y="1058"/>
+            <point key="canvasLocation" x="1507" y="1057"/>
         </scene>
     </scenes>
     <resources>

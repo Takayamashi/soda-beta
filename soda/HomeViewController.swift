@@ -173,11 +173,27 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let EventDetailstoryboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
-        let EventDetailView = EventDetailstoryboard.instantiateViewController(withIdentifier: "EventDetail") as! EventDetailViewController
-        EventDetailView.resultHandler = "text"
-        self.show(EventDetailView, sender: nil)
+        //appdelegateよりwindowサイズを抜き出すため呼び出し
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
+        //EventDetailのstoryboard指定
+        let EventDetailstoryboard: UIStoryboard = UIStoryboard(name: "EventDetail", bundle: nil)
+        
+        //各サイズごとのviewを指定
+        let EventDetailView375 = EventDetailstoryboard.instantiateViewController(withIdentifier: "EventDetail375") as! EventDetailViewController
+        let EventDetailView320 = EventDetailstoryboard.instantiateViewController(withIdentifier: "EventDetail320") as! EventDetailViewController
+        let EventDetailView414 = EventDetailstoryboard.instantiateViewController(withIdentifier: "EventDetail414") as! EventDetailViewController
+        
+        if appDelegate.display?.width == 320{
+            self.show(EventDetailView320, sender: nil)
+            
+        }else if appDelegate.display?.width == 375{
+            self.show(EventDetailView375, sender: nil)
+            
+        }else if appDelegate.display?.width == 414{
+            self.show(EventDetailView414, sender: nil)
+            
+        }
         
         //performSegue(withIdentifier: "EventDetail", sender: nil)
     }
@@ -214,6 +230,10 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         //searchButtonを押した際の処理を記述
         //let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "login")
         //self.present(loginViewController!, animated: true, completion: nil)
+        //noteButtonを押した際の処理を記述
+        let Searchstoryboard: UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
+        let SearchView = Searchstoryboard.instantiateViewController(withIdentifier: "Search") as! SearchTableViewController
+        self.show(SearchView, sender: nil)
     }
     
     @objc func clickNoteButton(){
