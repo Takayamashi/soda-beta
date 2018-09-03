@@ -9,13 +9,12 @@
 import UIKit
 import SlideMenuControllerSwift
 
-class ProfileConfigViewController: UIViewController {
-    
-    let searchButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "search")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickRefreshButton))
-    let noteButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "note")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickRefreshButton))
+
+class ProfileConfigViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var univaddTextField: UnivPickerTextField!
     @IBOutlet weak var univTextField: UITextField!
+    var mainViewController: UIViewController!
     
     
     @IBOutlet weak var MainView: UIView!
@@ -26,6 +25,9 @@ class ProfileConfigViewController: UIViewController {
         super.viewDidLoad()
         // 左ボタンを作成する.
         myLeftButton = UIBarButtonItem(image:UIImage(named: "back"), style: .plain, target: self, action: #selector(clickbackButton(sender:)))
+        
+        let mainController = storyboard?.instantiateViewController(withIdentifier: "Main") as! HomeViewController
+        self.mainViewController = UINavigationController(rootViewController: mainController)
         
         //ナビゲーションバーの右側にボタン付与
         self.navigationItem.leftBarButtonItem = myLeftButton
@@ -50,14 +52,6 @@ class ProfileConfigViewController: UIViewController {
         
     }
     
-    @objc func clickSearchButton(){
-        //searchButtonを押した際の処理を記述
-    }
-    
-    @objc func clickRefreshButton(){
-        //refreshButtonを押した際の処理を記述
-    }
-    
     @IBAction func adduniv(_ sender: Any) {
         
         let add:String = univaddTextField.text!
@@ -76,45 +70,49 @@ class ProfileConfigViewController: UIViewController {
     
     }
     
+    @IBAction func saveprofile(_ sender: Any) {
+        
+    }
+    
+    
+    
+    
     @objc func clickbackButton(sender: UIButton){
+        self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
         
-        //もともとのアニメーションを削除
-        /*
-         self.view.layer.removeAllAnimations()
-         let transition = CATransition()
-         transition.duration = 0.5
-         transition.type = kCATransitionPush
-         transition.subtype = kCATransitionFromLeft
-         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-         */
-        
-        
-        
-        /*
-         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveLinear, animations: {
-         self.MainView.center.x += self.MainView.bounds.width
-         
-         },completion:nil)
-         */
-        
-        
-        
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 0.249) {
-        // your code here
-        //delegate?.changeViewController(LeftMenu.main)
-        
-        
-        //let nextVC = HomeViewController()
-        //let naviVC = UINavigationController(rootViewController: nextVC)
-        //self.present(naviVC, animated: true, completion: nil)
-        
-        //}
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func openPhoto(){
+        let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary){
+            // インスタンスの作成
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
+        }
+    }
+    
+    func openCamera(){
+        let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
+        // カメラが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
+            // インスタンスの作成
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true, completion: nil)
+            
+        }
+    }
+    
     
 
     
