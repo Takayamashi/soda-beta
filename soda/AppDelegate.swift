@@ -10,9 +10,10 @@ import UIKit
 import SlideMenuControllerSwift
 import FacebookCore
 import FacebookLogin
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
     var display: CGSize?
@@ -29,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // for Facebook
         //Facebook初期化
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        
         return true
     }
     
