@@ -23,7 +23,7 @@ class NotificationViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 128/255, blue: 255/255, alpha: 1)
         navigationController?.navigationBar.tintColor = UIColor.white
         
-        //ナビゲーションアイテムのタイトルに画像を設定する。
+        //ナビゲーションアイテムのタイトルに画像を設定する
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"logo_white_small"))
         
     }
