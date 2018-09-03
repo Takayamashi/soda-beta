@@ -187,26 +187,6 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         
     }
     
-    func setnavigationBar2(){
-        
-        //NavigationBarが半透明かどうか
-        navigationController?.navigationBar.isTranslucent = false
-        //NavigationBarの色を変更
-        navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 128/255, blue: 255/255, alpha: 1)
-        navigationController?.navigationBar.tintColor = UIColor.white
-        //バーの左側にボタンを配置(ライブラリ特有)
-        addLeftBarButtonWithImage(UIImage(named: "list20")!)
-        
-        //ナビゲーションバーの右側にボタン付与
-        self.navigationItem.setRightBarButtonItems([noteButton!, searchButton!], animated: true)
-        
-        //ナビゲーションアイテムのタイトルに画像を設定する。
-        self.navigationItem.titleView = UIImageView(image:UIImage(named:"logo_white_small"))
-        
-    }
-    
-    
-    
     
     @objc func clickbackButton(sender: UIButton){
         //setnavigationBar2()
@@ -225,7 +205,7 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
  
         //DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
             // your code here
-    self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
+        self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
         
         //self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
  

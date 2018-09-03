@@ -8,8 +8,6 @@
 
 import UIKit
 import SlideMenuControllerSwift
-import FacebookCore
-import FacebookLogin
 import UserNotifications
 
 @UIApplicationMain
@@ -26,10 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UINavigationBar.appearance().backIndicatorImage = image
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = image
         self.createMenuView()
-        
-        // for Facebook
-        //Facebook初期化
-        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+       
         
         
         return true
@@ -38,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Call the 'activate' method to log an app event for use
         // in analytics and advertising reporting.
-        AppEventsLogger.activate(application)
     }
     
     func createMenuView(){

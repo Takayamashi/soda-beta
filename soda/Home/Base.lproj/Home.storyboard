@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOf-Fp-4SA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="211"/>
+            <point key="canvasLocation" x="1069" y="1014"/>
         </scene>
         <!--Profile Config View Controller-->
         <scene sceneID="zvs-Da-rDp">
@@ -642,7 +642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gz-NW-HrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3181.5999999999999" y="210.94452773613196"/>
+            <point key="canvasLocation" x="1926" y="1015"/>
         </scene>
         <!--Made Event View Controller-->
         <scene sceneID="tPg-lo-ooU">
@@ -873,7 +873,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJh-mk-fcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="931"/>
+            <point key="canvasLocation" x="3039" y="1013"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="B7G-o0-1Sz">
@@ -2399,6 +2399,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="adduniv:" destination="rO2-Zv-Fco" eventType="touchUpInside" id="V0I-MZ-KaP"/>
+                                            <action selector="saveprofile:" destination="rO2-Zv-Fco" eventType="touchUpInside" id="fj9-ml-vwH"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GDl-n0-XE7" customClass="TextViewLine" customModule="soda" customModuleProvider="target">

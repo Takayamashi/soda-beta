@@ -13,7 +13,6 @@ class MadeEventViewController: UIViewController, UITableViewDataSource, UITableV
     var selectNumber:Int = 0 //タップしたalertControllerの位置を記録する変数
     
     @IBOutlet weak var tableView: UITableView!
-    var mainContainerView = UIView()
     var mainViewController: UIViewController!
     
     
