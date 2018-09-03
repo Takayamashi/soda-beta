@@ -53,7 +53,37 @@ class MadeEventViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert: UIAlertController = UIAlertController(title: "", message: "", preferredStyle:  UIAlertControllerStyle.actionSheet)
         
+        let defaultAction: UIAlertAction = UIAlertAction(title: "イベントの内容を変更", style: .default, handler:{
+            (action: UIAlertAction!) -> Void in
+            let storyboard: UIStoryboard = UIStoryboard(name: "MadeEvent", bundle: nil)
+            let nextView = storyboard.instantiateViewController(withIdentifier: "ConfigEvent") as! ConfigEventViewController
+            self.show(nextView, sender: nil)
+            
+        })
+        let defaultAction1: UIAlertAction = UIAlertAction(title: "イベントを取り消す", style: .default, handler:{
+            (action: UIAlertAction!) -> Void in
+            self.selectNumber = 1
+            
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        
+        defaultAction.setValue(UIImage(named: "made2.png"), forKey: "image")
+        defaultAction.setValue(UIColor(red: 75/255, green: 75/255, blue: 75/255, alpha: 1), forKey: "imageTintColor")
+        
+        defaultAction1.setValue(UIImage(named: "cancel.png"), forKey: "image")
+        defaultAction1.setValue(UIColor(red: 75/255, green: 75/255, blue: 75/255, alpha: 1), forKey: "imageTintColor")
+        
+        cancelAction.setValue(UIImage(named: "cross_s.png"), forKey: "image")
+        cancelAction.setValue(UIColor(red: 75/255, green: 75/255, blue: 75/255, alpha: 1), forKey: "imageTintColor")
+        
+        alert.addAction(defaultAction)
+        alert.addAction(defaultAction1)
+        alert.addAction(cancelAction)
+        //下記のtintColorをいじるとalertControllerのボタン部分が全て色変更される。
+        alert.view.tintColor = UIColor(red: 63/255, green: 128/255, blue: 255/255, alpha: 0.8)
+        present(alert, animated: true, completion: nil)
         
     }
 
@@ -111,11 +141,7 @@ class MadeEventViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @objc func clickbackButton(sender: UIButton){
-        self.slideMenuController()?.openRight()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
-            // your code here
-            self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
-        }
+        self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
     }
     
     override func didReceiveMemoryWarning() {

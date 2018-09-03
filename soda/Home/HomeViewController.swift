@@ -24,9 +24,11 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     // ボタン作成
     var searchButton: UIBarButtonItem?
     var noteButton: UIBarButtonItem?
+    var noteexistButton: UIBarButtonItem?
     
     var goodcount = [Int]()
     var checkarray = [Bool]()
+    var checknote: Bool!
     
     
     override func viewDidLayoutSubviews() {
@@ -37,13 +39,16 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checknote = true
         
         goodcount = [1 ,2, 3, 4, 4, 9, 99, 100, 101, 9]
         checkarray = [false, false,false,false,false,false,false,false,false,false]
         
         searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickSearchButton))
         
-        noteButton = UIBarButtonItem(image: UIImage(named: "notification20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
+        noteButton = UIBarButtonItem(image: UIImage(named: "notification")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
+        
+        noteexistButton = UIBarButtonItem(image: UIImage(named: "notification_exist")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
         
         
         UITabBar.appearance().tintColor = UIColor(red: 63.0/255.0, green: 128.0/255.0, blue: 255.0/255.0, alpha: 1)
@@ -127,7 +132,12 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         addLeftBarButtonWithImage(UIImage(named: "list20")!)
         
         //ナビゲーションバーの右側にボタン付与
-        self.navigationItem.setRightBarButtonItems([noteButton!, searchButton!], animated: true)
+        if checknote{
+            self.navigationItem.setRightBarButtonItems([noteexistButton!, searchButton!], animated: true)
+            
+        }else{
+            self.navigationItem.setRightBarButtonItems([noteButton!, searchButton!], animated: true)
+        }
         
         //ナビゲーションアイテムのタイトルに画像を設定する。
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"logo_white_small"))
@@ -241,6 +251,7 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         let Notificationstoryboard: UIStoryboard = UIStoryboard(name: "Notification", bundle: nil)
         let NotificationView = Notificationstoryboard.instantiateViewController(withIdentifier: "Notification") as! NotificationViewController
         self.show(NotificationView, sender: nil)
+        checknote = false
     }
     
 

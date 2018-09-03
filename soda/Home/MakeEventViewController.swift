@@ -24,40 +24,12 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     @IBOutlet var scrollView: UIScrollView!
     
     @IBOutlet weak var eventname: UITextField!
-    @IBOutlet weak var university: UITextField!
     @IBOutlet weak var eventfee: UITextField!
     @IBOutlet weak var eventplace: UITextField!
     @IBOutlet weak var eventterms: UITextField!
     @IBOutlet weak var eventcontact: UITextField!
     @IBOutlet weak var eventcontent: UITextView!
-    
-    
-    //responsive
-    var resizedView: CGSize?
-    
-    @IBOutlet weak var space_bottom: UIView!
-    @IBOutlet weak var space_bottom_width: NSLayoutConstraint!
-    @IBOutlet weak var space_bottom_height: NSLayoutConstraint!
-    
-    
-    
-    @IBOutlet weak var theme: UIButton!
-    @IBOutlet weak var album: UIButton!
-    @IBOutlet weak var themeview: UIView!
-    @IBOutlet weak var albumview: UIView!
-    @IBOutlet weak var themeimage: UIImageView!
-    @IBOutlet weak var imageheight: NSLayoutConstraint!
-    @IBOutlet weak var imagewidth: NSLayoutConstraint!
-    
-    
-    @IBOutlet weak var eventnameheight: NSLayoutConstraint!
-    @IBOutlet weak var eventnamewidth: NSLayoutConstraint!
-    @IBOutlet weak var eventnameView: UIView!
-    
-    
-    
-    
-    
+
     
     
     @IBOutlet weak var univaddTextField: UnivPickerTextField!
@@ -73,104 +45,8 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     
     var txtActiveField = UITextField()
     
-    func resize(resizeView: CGSize, resizer: CGSize) -> CGSize{
-        resizedView?.width = resizeView.width  * (resizer.width/375.0)
-        resizedView?.height = resizeView.height  * (resizer.height/375.0)
-        resizedView = CGSize(width: resizeView.width  * (resizer.width/375.0), height: resizeView.height  * (resizer.height/375.0))
-        
-        return resizedView!
-    }
-    
-    func resize_view(resizeView: CGSize, resizer: CGSize) -> CGSize{
-        resizedView?.width = resizeView.width  * (resizer.width/375.0)
-        resizedView?.height = resizeView.height  * (resizer.height/375.0)
-        resizedView = CGSize(width: resizeView.width  * (resizer.width/375.0), height: resizeView.height)
-        
-        return resizedView!
-    }
-    
-    /*
-    func resize_h(resizeView: CGSize, resizer: CGSize){
-        var resizedView: CGSize
-        
-        resizedView.height = resizeView.height  * (resizer.height/375.0)
-        
-        return resizedView.height
-    }
- */
-    
-    /*
-    func responsive(responsivesize:CGSize){
-        if(responsivesize.width == 375.0 && responsivesize.height == 667.0){
-            //iphone8
-            
-        }else if(responsivesize.width == 320.0 && responsivesize.height == 568.0){
-            //iphoneSE
-            space_bottom_height.constant = space_bottom_height.constant*(responsivesize.height/667.0)
-            space_bottom_width.constant = space_bottom_width.constant*(responsivesize.width/375.0)
-            
-            //theme
-            theme.frame.size = resize(resizeView: theme.frame.size, resizer: responsivesize)
-            themeview.frame.size = resize_view(resizeView: themeview.frame.size, resizer: responsivesize)
-            
-            //album
-            album.frame.size = resize(resizeView: album.frame.size, resizer: responsivesize)
-            albumview.frame.size = resize_view(resizeView: albumview.frame.size, resizer: responsivesize)
-            
-            //image
-            imageheight.constant = imageheight.constant*(responsivesize.height/667.0)
-            imagewidth.constant = imagewidth.constant*(responsivesize.width/375.0)
-            
-            //eventview
-            eventnameView.frame.size = resize_view(resizeView: eventnameView.frame.size, resizer: responsivesize)
-            
-            
-        }else if(responsivesize.width == 414.0 && responsivesize.height == 736.0){
-            //iphone8plus
-            
-            //theme
-            theme.frame.size = resize(resizeView: theme.frame.size, resizer: responsivesize)
-            themeview.frame.size = resize_view(resizeView: themeview.frame.size, resizer: responsivesize)
-            
-            //album
-            album.frame.size = resize(resizeView: album.frame.size, resizer: responsivesize)
-            albumview.frame.size = resize_view(resizeView: albumview.frame.size, resizer: responsivesize)
-            
-            //image
-            imageheight.constant = imageheight.constant*(responsivesize.height/667.0)
-            imagewidth.constant = imagewidth.constant*(responsivesize.width/375.0)
-            
-            eventnameView.frame.size = resize_view(resizeView: eventnameView.frame.size, resizer: responsivesize)
-            
-        }else if(responsivesize.width == 375.0 && responsivesize.height == 812.0){
-            //iphoneX
-            space_bottom_height.constant = space_bottom_height.constant*(responsivesize.height/667.0)
-            space_bottom_width.constant = space_bottom_width.constant*(responsivesize.width/375.0)
-            
-            //theme
-            theme.frame.size = resize(resizeView: theme.frame.size, resizer: responsivesize)
-            themeview.frame.size = resize_view(resizeView: themeview.frame.size, resizer: responsivesize)
-            
-            //album
-            album.frame.size = resize(resizeView: album.frame.size, resizer: responsivesize)
-            albumview.frame.size = resize_view(resizeView: albumview.frame.size, resizer: responsivesize)
-            
-            //image
-            imageheight.constant = imageheight.constant*(responsivesize.height/667.0)
-            imagewidth.constant = imagewidth.constant*(responsivesize.width/375.0)
-            
-            eventnameView.frame.size = resize_view(resizeView: eventnameView.frame.size, resizer: responsivesize)
-            
-        }
-        
-    }
- */
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //responsive(responsivesize: responsizer!)
         
         searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: nil)
         
@@ -183,7 +59,6 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         scrollView.delegate = self
         // textfiled用Delegate
         eventname.delegate = self
-        university.delegate = self
         eventfee.delegate = self
         eventplace.delegate = self
         eventterms.delegate = self
@@ -213,7 +88,6 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         eventname.resignFirstResponder()
-        university.resignFirstResponder()
         eventfee.resignFirstResponder()
         eventplace.resignFirstResponder()
         eventterms.resignFirstResponder()
@@ -360,14 +234,30 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     
     
     @IBAction func Next(_ sender: Any) {
+        //appdelegateよりwindowサイズを抜き出すため呼び出し
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
         let ConfirmEventstoryboard: UIStoryboard = UIStoryboard(name: "MakeEvent", bundle: nil)
-        let ConfirmEventView = ConfirmEventstoryboard.instantiateViewController(withIdentifier: "Confirm") as! ConfirmViewController
-        self.show(ConfirmEventView, sender: nil)
+        let ConfirmEventView414 = ConfirmEventstoryboard.instantiateViewController(withIdentifier: "Confirm414") as! ConfirmViewController
+        let ConfirmEventView375 = ConfirmEventstoryboard.instantiateViewController(withIdentifier: "Confirm375") as! ConfirmViewController
+        let ConfirmEventView320 = ConfirmEventstoryboard.instantiateViewController(withIdentifier: "Confirm320") as! ConfirmViewController
+        
+        if appDelegate.display?.width == 320{
+            self.show(ConfirmEventView320, sender: nil)
+        }else if appDelegate.display?.width == 375{
+            self.show(ConfirmEventView375, sender: nil)
+            
+        }else if appDelegate.display?.width == 414{
+            self.show(ConfirmEventView414, sender: nil)
+        }
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    /*
     @IBAction func adduniv(_ sender: Any) {
         
         let add:String = univaddTextField.text!
@@ -385,6 +275,7 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         }
         
     }
+ */
     
 }
 
