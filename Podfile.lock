@@ -1,20 +1,33 @@
 PODS:
+  - AWSCognito (2.6.17):
+    - AWSCore (= 2.6.17)
+  - AWSCore (2.6.17)
+  - AWSSNS (2.6.17):
+    - AWSCore (= 2.6.17)
   - RSKImageCropper (2.0.1)
   - SlideMenuControllerSwift (4.0.0)
 
 DEPENDENCIES:
+  - AWSCognito
+  - AWSSNS
   - RSKImageCropper
   - SlideMenuControllerSwift
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AWSCognito
+    - AWSCore
+    - AWSSNS
     - RSKImageCropper
     - SlideMenuControllerSwift
 
 SPEC CHECKSUMS:
+  AWSCognito: 2a3da30af7d731cfd1032812a052e65099bbe26a
+  AWSCore: 82fbb01d73a22cfae77ac2f03f6073a123092452
+  AWSSNS: 4f5ee521ea0e4fdbada21b8121de7f792d52a846
   RSKImageCropper: 50d5a3e4160f0309b14d75b89d5ae2f496d56e0d
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
 
-PODFILE CHECKSUM: 9203b7999a8f0320d38f8073c1a3a620bf5bd153
+PODFILE CHECKSUM: 5786c565b22614d6dfffb0c5d2776b3b840908fa
 
 COCOAPODS: 1.5.0

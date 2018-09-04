@@ -6,6 +6,8 @@ target 'soda' do
   use_frameworks!
   pod 'SlideMenuControllerSwift'
   pod 'RSKImageCropper'
+  pod 'AWSSNS'
+  pod 'AWSCognito'
 # Pods for soda
 
 end
