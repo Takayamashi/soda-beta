@@ -102,10 +102,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="60" id="Asz-au-hIF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="60" id="Asz-au-hIF">
                                         <rect key="frame" x="0.0" y="28" width="240" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Asz-au-hIF" id="6Wg-nw-Tpy">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Asz-au-hIF" id="6Wg-nw-Tpy">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -115,7 +115,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="rIt-mY-UyZ" customClass="ISTDynamicImage" customModule="soda" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="rIt-mY-UyZ" customClass="ISTDynamicImage" customModule="soda" customModuleProvider="target">
                                                     <rect key="frame" x="7" y="17" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="8zd-QZ-i7z"/>
@@ -170,16 +170,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRI-58-7gf">
-                                        <rect key="frame" x="112" y="28" width="30" height="30"/>
+                                        <rect key="frame" x="97" y="28" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="camera"/>
+                                        <connections>
+                                            <action selector="changeProfileView:" destination="Riw-MG-8Gr" eventType="touchUpInside" id="4zt-B1-1Hf"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="RGg-hS-sdj">
                                         <rect key="frame" x="135" y="43" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGh-gd-0WI">
-                                        <rect key="frame" x="110" y="151" width="160" height="27"/>
+                                        <rect key="frame" x="98" y="151" width="178" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.2666666667" green="0.4431372549" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -191,6 +194,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeProfileView:" destination="Riw-MG-8Gr" eventType="touchUpInside" id="CaJ-rH-bL1"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTC-6J-xad">
                                         <rect key="frame" x="0.0" y="192" width="375" height="1"/>
@@ -254,6 +260,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="adduniv:" destination="Riw-MG-8Gr" eventType="touchUpInside" id="hMI-hv-cRq"/>
+                                            <action selector="saveprofile:" destination="Riw-MG-8Gr" eventType="touchUpInside" id="1Nw-zc-0wo"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="主催者としてのプロフィール" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euc-QR-kMd">
@@ -350,13 +357,19 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="MainView" destination="Ffv-1u-luD" id="ofp-eT-hjd"/>
+                        <outlet property="ProfileTextView" destination="rux-ZN-6ga" id="md9-8F-pbK"/>
+                        <outlet property="facebookAccountName" destination="Uat-a2-PkD" id="HCg-4e-dlG"/>
+                        <outlet property="mailAdressTextField" destination="D2m-v5-fLq" id="dgo-a6-MZC"/>
+                        <outlet property="profileImageView" destination="RGg-hS-sdj" id="Kch-sy-H3N"/>
+                        <outlet property="twitterAccountName" destination="6JT-oA-Aof" id="vwV-7R-wAD"/>
                         <outlet property="univTextField" destination="Q30-or-SPH" id="fpT-Zq-rd7"/>
                         <outlet property="univaddTextField" destination="PJJ-XB-pgN" id="E0V-R6-S7D"/>
+                        <outlet property="userNameTextField" destination="TxN-cD-oWf" id="yTn-Pc-8ZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M16-NS-ZgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1195" y="1089"/>
+            <point key="canvasLocation" x="-1196" y="1088.4557721139431"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="aJk-Fn-6mZ">
@@ -2245,10 +2258,11 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="adduniv:" destination="wzO-sD-pk4" eventType="touchUpInside" id="Jjc-2G-uEX"/>
+                                            <action selector="saveprofile:" destination="wzO-sD-pk4" eventType="touchUpInside" id="use-wf-VaD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNv-gQ-6qZ">
-                                        <rect key="frame" x="75" y="142" width="160" height="27"/>
+                                        <rect key="frame" x="69" y="142" width="173" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.2666666667" green="0.4431372549" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -2260,11 +2274,17 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeProfileView:" destination="wzO-sD-pk4" eventType="touchUpInside" id="xcJ-t8-plc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-kN-92e">
-                                        <rect key="frame" x="75" y="20" width="30" height="30"/>
+                                        <rect key="frame" x="69" y="19" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="camera"/>
+                                        <connections>
+                                            <action selector="changeProfileView:" destination="wzO-sD-pk4" eventType="touchUpInside" id="k6X-gi-isC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2287,13 +2307,19 @@
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="MainView" destination="uSg-1N-frg" id="nuZ-kI-TEX"/>
+                        <outlet property="ProfileTextView" destination="pvb-Yx-paK" id="qgj-oE-sTx"/>
+                        <outlet property="facebookAccountName" destination="LkQ-Cj-MfZ" id="Kkq-Bm-1UZ"/>
+                        <outlet property="mailAdressTextField" destination="Gnm-2U-cvQ" id="vtR-uw-svT"/>
+                        <outlet property="profileImageView" destination="cn5-QT-1A5" id="SdE-Ye-e6T"/>
+                        <outlet property="twitterAccountName" destination="byi-c7-0Bp" id="aXj-VH-9IW"/>
                         <outlet property="univTextField" destination="oiJ-cO-hHO" id="1Ac-oJ-MH2"/>
                         <outlet property="univaddTextField" destination="3bB-cS-8Cg" id="JMC-os-fge"/>
+                        <outlet property="userNameTextField" destination="ddq-oC-SeG" id="qPa-cM-Z78"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9xz-gj-iC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-354" y="1088"/>
+            <point key="canvasLocation" x="-355.19999999999999" y="1087.5562218890555"/>
         </scene>
         <!--Profile Config View Controller-->
         <scene sceneID="vwc-cG-ecP">
@@ -2307,8 +2333,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHF-Tt-1lF">
-                                        <rect key="frame" x="133" y="28" width="30" height="30"/>
+                                        <rect key="frame" x="119" y="28" width="30" height="30"/>
                                         <state key="normal" image="camera"/>
+                                        <connections>
+                                            <action selector="changeProfileView:" destination="rO2-Zv-Fco" eventType="touchUpInside" id="Dc4-Uc-6Dw"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="fHY-lS-PeL">
                                         <rect key="frame" x="157" y="43" width="100" height="100"/>
@@ -2317,8 +2346,8 @@
                                             <constraint firstAttribute="height" constant="100" id="cnG-08-N6f"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGL-wA-gbb">
-                                        <rect key="frame" x="127" y="151" width="160" height="27"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGL-wA-gbb">
+                                        <rect key="frame" x="119" y="151" width="177" height="27"/>
                                         <color key="backgroundColor" red="0.2666666667" green="0.4431372549" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="プロフィール画像を変更する">
@@ -2329,6 +2358,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeProfileView:" destination="rO2-Zv-Fco" eventType="touchUpInside" id="ASC-bJ-LcF"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xw1-qn-azw">
                                         <rect key="frame" x="0.0" y="192" width="414" height="1"/>
@@ -2477,7 +2509,7 @@
                                     <constraint firstItem="fHY-lS-PeL" firstAttribute="top" secondItem="lqF-WS-k5E" secondAttribute="top" constant="43" id="KxN-da-oQQ"/>
                                     <constraint firstItem="WGL-wA-gbb" firstAttribute="centerX" secondItem="lqF-WS-k5E" secondAttribute="centerX" id="Nwr-p2-lC0"/>
                                     <constraint firstItem="WGL-wA-gbb" firstAttribute="top" secondItem="fHY-lS-PeL" secondAttribute="bottom" constant="8" id="Wuq-D8-eqK"/>
-                                    <constraint firstItem="fHY-lS-PeL" firstAttribute="leading" secondItem="ZHF-Tt-1lF" secondAttribute="trailing" constant="-6" id="xko-oM-2MO"/>
+                                    <constraint firstItem="ZHF-Tt-1lF" firstAttribute="leading" secondItem="lqF-WS-k5E" secondAttribute="leading" constant="119" id="rT0-fq-XFe"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2495,13 +2527,19 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="MainView" destination="lqF-WS-k5E" id="9dv-Q6-qCD"/>
+                        <outlet property="ProfileTextView" destination="GDl-n0-XE7" id="cfr-5G-rU9"/>
+                        <outlet property="facebookAccountName" destination="Lk2-34-4q8" id="5Wt-bt-6uG"/>
+                        <outlet property="mailAdressTextField" destination="IEc-ya-suk" id="ccg-n4-bhH"/>
+                        <outlet property="profileImageView" destination="fHY-lS-PeL" id="xmW-Q0-0XA"/>
+                        <outlet property="twitterAccountName" destination="tbP-v1-nTK" id="mFf-Sy-Lbw"/>
                         <outlet property="univTextField" destination="rEz-9m-VJa" id="6Hd-Jk-44q"/>
                         <outlet property="univaddTextField" destination="gSj-e6-RWa" id="ic4-3i-YaF"/>
+                        <outlet property="userNameTextField" destination="DER-JQ-uSy" id="JLS-JN-4bJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XxQ-2F-6Rr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2126.25" y="1089.0845070422536"/>
+            <point key="canvasLocation" x="-2126.4000000000001" y="1088.4557721139431"/>
         </scene>
     </scenes>
     <resources>
