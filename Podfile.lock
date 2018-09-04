@@ -1,16 +1,20 @@
 PODS:
+  - RSKImageCropper (2.0.1)
   - SlideMenuControllerSwift (4.0.0)
 
 DEPENDENCIES:
+  - RSKImageCropper
   - SlideMenuControllerSwift
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - RSKImageCropper
     - SlideMenuControllerSwift
 
 SPEC CHECKSUMS:
+  RSKImageCropper: 50d5a3e4160f0309b14d75b89d5ae2f496d56e0d
   SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
 
-PODFILE CHECKSUM: fe7aaa4c03e21cd0e209f668451f24e28618330b
+PODFILE CHECKSUM: 9203b7999a8f0320d38f8073c1a3a620bf5bd153
 
 COCOAPODS: 1.5.0
