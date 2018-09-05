@@ -48,10 +48,6 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: nil)
-        
-        noteButton = UIBarButtonItem(image: UIImage(named: "notification20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: nil)
-        
         let mainController = storyboard?.instantiateViewController(withIdentifier: "Main") as! HomeViewController
         self.mainViewController = UINavigationController(rootViewController: mainController)
         
@@ -132,7 +128,7 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         */
     }
     
-    // Notificationを設定
+    // Keyboardが現れた時ViewをずらすためのNotificationを設定
     func configureObserver() {
         let notification = NotificationCenter.default
         notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -145,7 +141,7 @@ class MakeEventViewController: UIViewController,UITextFieldDelegate,UIScrollView
         notification.removeObserver(self)
     }
     
-    // Keyboardが現れた時Viewをずらす。
+    // Keyboardが現れた時Viewをずらす
     @objc func keyboardWillShow(notification: Notification?) {
         //上のTextFieldをタップする時そのまま、下のTextFieldをタップする時Viewをずらす。
         if txtActiveField.isFirstResponder || eventcontent.isFirstResponder {

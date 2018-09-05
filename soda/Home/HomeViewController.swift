@@ -37,27 +37,32 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        setnavigationBar()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        checknote = true
+        // appDelegateからの変数呼び出しのため
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        
+        print(UIApplication.shared.applicationIconBadgeNumber)
         
         goodcount = [1 ,2, 3, 4, 4, 9, 99, 100, 101, 9]
         checkarray = [false, false,false,false,false,false,false,false,false,false]
         
         searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickSearchButton))
         
-        noteButton = UIBarButtonItem(image: UIImage(named: "notification")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
+        noteButton = UIBarButtonItem(image: appDelegate.noteimage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
         
-        noteexistButton = UIBarButtonItem(image: UIImage(named: "notification_exist")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
+        //noteexistButton = UIBarButtonItem(image: UIImage(named: "notification_exist")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
         
         
         UITabBar.appearance().tintColor = UIColor(red: 63.0/255.0, green: 128.0/255.0, blue: 255.0/255.0, alpha: 1)
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
-        self.setnavigationBar()
-        
-        //tableView.rowHeight = UITableViewAutomaticDimension //追加
-        //tableView.estimatedRowHeight = 270 //追加
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -132,12 +137,8 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         addLeftBarButtonWithImage(UIImage(named: "list20")!)
         
         //ナビゲーションバーの右側にボタン付与
-        if checknote{
-            self.navigationItem.setRightBarButtonItems([noteexistButton!, searchButton!], animated: true)
-            
-        }else{
-            self.navigationItem.setRightBarButtonItems([noteButton!, searchButton!], animated: true)
-        }
+        print("badge count is :",  String(UIApplication.shared.applicationIconBadgeNumber))
+        self.navigationItem.setRightBarButtonItems([noteButton!, searchButton!], animated: true)
         
         //ナビゲーションアイテムのタイトルに画像を設定する。
         self.navigationItem.titleView = UIImageView(image:UIImage(named:"logo_white_small"))
@@ -248,10 +249,12 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     
     @objc func clickNoteButton(){
         //noteButtonを押した際の処理を記述
+        print("badge count is :",  String(UIApplication.shared.applicationIconBadgeNumber))
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        setnavigationBar()
         let Notificationstoryboard: UIStoryboard = UIStoryboard(name: "Notification", bundle: nil)
         let NotificationView = Notificationstoryboard.instantiateViewController(withIdentifier: "Notification") as! NotificationViewController
         self.show(NotificationView, sender: nil)
-        checknote = false
     }
     
 
