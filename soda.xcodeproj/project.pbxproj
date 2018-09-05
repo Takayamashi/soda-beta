@@ -67,6 +67,7 @@
 		6A0FE79720BBF62900F57405 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A0FE79A20BBF62900F57405 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A0FE79C20BBF62900F57405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A1B7338213E38E40097CFA6 /* soda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = soda.entitlements; sourceTree = "<group>"; };
 		6A1F9C62211E84F100546D40 /* TaxtViewLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxtViewLine.swift; sourceTree = "<group>"; };
 		6A1F9C67211EB68E00546D40 /* UIButtonLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonLine.swift; sourceTree = "<group>"; };
 		6A25BDCE20EB5AD30041FDB3 /* UILabel+change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+change.swift"; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		6A0FE78F20BBF62700F57405 /* soda */ = {
 			isa = PBXGroup;
 			children = (
+				6A1B7338213E38E40097CFA6 /* soda.entitlements */,
 				6A440F3820BE319B002EED8C /* images.xcassets */,
 				6A8B4B9E20BD2B1200760FAA /* Extension */,
 				6A8F160620C0FD690098CBFD /* Class */,
@@ -313,6 +315,9 @@
 						CreatedOnToolsVersion = 9.3.1;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -587,11 +592,15 @@
 			baseConfigurationReference = 148CEFB55D518DEB8730DB64 /* Pods-soda.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = soda/soda.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2N3P7R2Y2;
 				INFOPLIST_FILE = soda/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.takayamashi.soda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -604,11 +613,15 @@
 			baseConfigurationReference = 44CD6AFB04949879D18F3300 /* Pods-soda.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = soda/soda.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N2N3P7R2Y2;
 				INFOPLIST_FILE = soda/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.takayamashi.soda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
