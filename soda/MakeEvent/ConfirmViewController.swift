@@ -10,13 +10,47 @@ import UIKit
 
 class ConfirmViewController: UIViewController {
     
-    /*
-     let backButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickbackButton))
-     */
+    @IBOutlet weak var eventnamelabel: UILabel!
+    
+    
+    @IBOutlet weak var eventmonthlabel: UILabel!
+    @IBOutlet weak var eventdaylabel: UILabel!
+    @IBOutlet weak var universitylabel: UILabel!
+    @IBOutlet weak var eventimageView: UIImageView!
+    @IBOutlet weak var eventfeelabel: UILabel!
+    @IBOutlet weak var eventplacelabel: UILabel!
+    
+    @IBOutlet weak var eventstartdaytimelabel: UILabel!
+    
+    @IBOutlet weak var eventtermslabel: UILabel!
+    @IBOutlet weak var eventcontentlabel: UILabel!
+    @IBOutlet weak var eventcontactlabel: UILabel!
+    
+    
+    
+    @IBOutlet weak var organizernamelabel: UILabel!
+    @IBOutlet weak var organizeprofilelabel: UILabel!
+
+    
+    var eventname: String?
+    var eventmonth: String?
+    var eventday: String?
+    var university: String?
+    var eventimage: UIImage?
+    var eventfee: String?
+    var eventplace: String?
+    var eventstartdaytime: String?
+    var eventterms: String?
+    var eventcontent: String?
+    var eventcontact: String?
+    var organizername: String?
+    var organizeprofile: String?
+    var closechecked: Bool?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setContent()
         setnavigationBar()
     }
     
@@ -36,6 +70,19 @@ class ConfirmViewController: UIViewController {
         
         //ナビゲーションアイテムのタイトル
         self.navigationItem.title = "イベントの確認"
+    }
+    
+    func setContent(){
+        eventnamelabel.text = eventname
+        eventdaylabel.text = eventday
+        universitylabel.text = university
+        eventfeelabel.text = eventfee
+        eventplacelabel.text = eventplace
+        eventstartdaytimelabel.text = eventstartdaytime
+        eventtermslabel.text = eventterms
+        eventcontentlabel.text = eventcontent
+        eventcontactlabel.text = eventcontact
+        print(closechecked!)
     }
     
     @objc func clickbackButton(){
