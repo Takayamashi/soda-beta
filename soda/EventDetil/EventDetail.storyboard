@@ -550,9 +550,9 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="eWA-yX-XI8">
-                                                        <rect key="frame" x="13" y="28" width="313" height="47"/>
+                                                        <rect key="frame" x="28" y="28" width="282" height="47"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="313" id="AgQ-iT-5J2"/>
+                                                            <constraint firstAttribute="width" constant="282" id="PDp-Z0-uJc"/>
                                                         </constraints>
                                                         <string key="text">愚の直行
 えるしってるよ〜
@@ -704,7 +704,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12X-XW-Xsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="1123"/>
+            <point key="canvasLocation" x="744.79999999999995" y="1122.6386806596702"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="zff-Kd-Ozx">
@@ -887,9 +887,9 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="VbV-ZF-1yc">
-                                                        <rect key="frame" x="8" y="28" width="269" height="39.5"/>
+                                                        <rect key="frame" x="28" y="28" width="229" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="269" id="Y2p-Du-7JA"/>
+                                                            <constraint firstAttribute="width" constant="229" id="AAh-0Y-ORt"/>
                                                         </constraints>
                                                         <string key="text">愚の直行
 えるしってるよ〜
