@@ -38,8 +38,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 }
 
 
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -95,12 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // in analytics and advertising reporting.
         
         if UIApplication.shared.applicationIconBadgeNumber == 0 {
-            let noteimage = UIImage(named: "notification20")
+            noteimage = UIImage(named: "notification20")
         }else{
-            let noteimage = UIImage(named: "notification_exist")
+            noteimage = UIImage(named: "notification_exist")
         }
-        
-        
         
     }
     
