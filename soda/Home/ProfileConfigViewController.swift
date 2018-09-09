@@ -35,6 +35,9 @@ class ProfileConfigViewController: UIViewController, UIImagePickerControllerDele
     @IBOutlet weak var MainView: UIView!
     var myLeftButton: UIBarButtonItem!
     
+    //textfieldが選択された際の格納変数
+    var txtActiveField = UITextField()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,14 +59,10 @@ class ProfileConfigViewController: UIViewController, UIImagePickerControllerDele
     func setProfile(){
         if UserDefaults.standard.object(forKey: "profileImage") != nil{
             //Profile画像参照
-            /*
-            let decodeData = (base64Encoded: dict["profileImage"])
+            let decodeData = (base64Encoded: UserDefaults.standard.object(forKey: "profileImage"))
             let decodedData = NSData(base64Encoded: decodeData as! String, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters)
             let decodedImage = UIImage(data:decodedData! as Data)
-            nowprofileImage = decodedImage!
-            */
-            
-            //profileImageView.image = UserDefaults.standard.object(forKey: "profileImage") as? UIImage
+            profileImageView.image = decodedImage!
         }
         
         if UserDefaults.standard.object(forKey: "username") != nil{
@@ -78,8 +77,8 @@ class ProfileConfigViewController: UIViewController, UIImagePickerControllerDele
             mailAdressTextField.text = UserDefaults.standard.object(forKey: "mailadress") as? String
         }
         
-        if UserDefaults.standard.object(forKey: "profile") != nil{
-            ProfileTextView.text = UserDefaults.standard.object(forKey: "profile") as? String
+        if UserDefaults.standard.object(forKey: "profiletext") != nil{
+            ProfileTextView.text = UserDefaults.standard.object(forKey: "profiletext") as? String
         }
         
         if UserDefaults.standard.object(forKey: "twitteraccount") != nil{
@@ -89,6 +88,7 @@ class ProfileConfigViewController: UIViewController, UIImagePickerControllerDele
         if UserDefaults.standard.object(forKey: "facebookaccount") != nil{
             facebookAccountName.text = UserDefaults.standard.object(forKey: "facebookaccount") as? String
         }
+        
     }
     
     
@@ -187,18 +187,28 @@ class ProfileConfigViewController: UIViewController, UIImagePickerControllerDele
         let profileImage64String = data.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters) as String
         let username = userNameTextField.text
         let indicateuniv = univTextField.text
+        let mailadress = mailAdressTextField.text
+        let profiletext = ProfileTextView.text
+        let twitteraccount = twitterAccountName.text
+        let facebookaccount = facebookAccountName.text
         
         //アプリ内へ保存
         UserDefaults.standard.set(profileImage64String, forKey: "profileImage")
-        UserDefaults.standard.set(userNameTextField.text, forKey: "username")
-        UserDefaults.standard.set(univTextField.text, forKey: "indicateuniv")
-        UserDefaults.standard.set(mailAdressTextField.text, forKey: "mailadress")
-        UserDefaults.standard.set(ProfileTextView.text, forKey: "profile")
-        UserDefaults.standard.set(twitterAccountName.text, forKey: "twitteraccount")
-        UserDefaults.standard.set(facebookAccountName.text, forKey: "facebookaccount")
+        UserDefaults.standard.set(username, forKey: "username")
+        UserDefaults.standard.set(indicateuniv, forKey: "indicateuniv")
+        UserDefaults.standard.set(mailadress, forKey: "mailadress")
+        UserDefaults.standard.set(profiletext, forKey: "profiletext")
+        UserDefaults.standard.set(twitteraccount, forKey: "twitteraccount")
+        UserDefaults.standard.set(facebookaccount, forKey: "facebookaccount")
         
         
+        //ここでprofileImageをS3にアップロードしたい
         
+        
+        //サーバー用dictionary
+        //let user:NSDictionary = ["profileImage": S3へアップロードした時のurlを置きたい, "username":username, "indicateuniv":indicateuniv, "mailadress":mailadress, "profiletext":profiletext, "twitteraccount":twitteraccount, "facebookaccount":facebookaccount]
+        
+        self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
     }
     
     
@@ -274,6 +284,83 @@ class ProfileConfigViewController: UIViewController, UIImagePickerControllerDele
     //トリミング画面でキャンセルを押した時
     func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //keyboardずらす用のnotification呼び出し
+        self.configureObserver()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        //keyboardずらす用のnotification削除
+        self.removeObserver()
+        print("willdisappear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        /*
+         self.view.layer.removeAllAnimations()
+         let transition = CATransition()
+         transition.duration = 0.4
+         transition.type = kCATransitionPush
+         transition.subtype = kCATransitionFromLeft
+         self.navigationController?.view.layer.add(transition, forKey: kCATransition)
+         */
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        ProfileTextView.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+    
+    
+    //UITextFieldが編集された直後に呼ばれる.
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
+        txtActiveField = textField
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtActiveField.resignFirstResponder()
+        
+        return true
+    }
+    
+    // Keyboardが現れた時ViewをずらすためのNotificationを設定
+    func configureObserver() {
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    // Notificationを削除
+    func removeObserver() {
+        let notification = NotificationCenter.default
+        notification.removeObserver(self)
+    }
+    
+    // Keyboardが現れた時Viewをずらす
+    @objc func keyboardWillShow(notification: Notification?) {
+        //上のTextFieldをタップする時そのまま、下のTextFieldをタップする時Viewをずらす
+        if txtActiveField.isFirstResponder || ProfileTextView.isFirstResponder {
+            let rect = (notification?.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+            let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double
+            UIView.animate(withDuration: duration!, animations: { () in
+                let transform = CGAffineTransform(translationX: 0, y: -(rect?.size.height)!)
+                self.view.transform = transform
+            })
+        }
+    }
+    
+    // Keyboardが消えたときViewを戻す
+    @objc func keyboardWillHide(notification: Notification?) {
+        let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!, animations: { () in
+            self.view.transform = CGAffineTransform.identity
+        })
     }
     
     
