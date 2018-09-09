@@ -45,7 +45,7 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // appDelegateからの変数呼び出しのため
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        //let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         
         print(UIApplication.shared.applicationIconBadgeNumber)
@@ -55,9 +55,9 @@ class HomeViewController: UIViewController,UITabBarDelegate, UITableViewDelegate
         
         searchButton = UIBarButtonItem(image: UIImage(named: "search20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickSearchButton))
         
-        noteButton = UIBarButtonItem(image: appDelegate.noteimage?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
+        noteButton = UIBarButtonItem(image: UIImage(named: "notification20")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
         
-        //noteexistButton = UIBarButtonItem(image: UIImage(named: "notification_exist")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
+        noteexistButton = UIBarButtonItem(image: UIImage(named: "notification_exist")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(clickNoteButton))
         
         
         UITabBar.appearance().tintColor = UIColor(red: 63.0/255.0, green: 128.0/255.0, blue: 255.0/255.0, alpha: 1)
